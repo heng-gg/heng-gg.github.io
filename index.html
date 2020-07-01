@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            background-color: rgb(37, 36, 36) !important;
+        }
+
+        .head-A {
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .head-L {
+            text-align: center;
+            top: 200px;
+            color: white;
+        }
+
+        .head-L h1 {
+            opacity: 0;
+
+            font-size: 40px;
+        }
+
+        .head-L p {
+            opacity: 0;
+
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .head-L span {
+            display: inline-block;
+            transition: all 0.3 !important;
+            width: 160px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid orange;
+            border-radius: 30px;
+            font-size: 20px;
+            /* position: absolute; */
+            margin-top: 150px;
+            opacity: 0;
+        }
+
+        .head-L span:hover {
+            background: orange;
+        }
+
+        .head-R {
+            opacity: 0;
+            height: 800px;
+            width: 600px;
+        }
+
+        .head-R img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .body-A {
+            padding-top: 50px;
+            /* margin: 0 auto; */
+            text-align: center;
+            color: white;
+        }
+
+        .body-A div img {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .body-A div h1 {
+            opacity: 0;
+        }
+
+        .body-B {
+            padding-top: 50px;
+            width: 100%;
+            height: 590px;
+            text-align: center;
+        }
+
+        .body-B div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .body-B div:nth-child(1) img {
+            opacity: 0;
+            position: relative;
+            left: -800px;
+        }
+
+        .body-B div:nth-child(2) img {
+            opacity: 0;
+            position: relative;
+            left: 800px;
+        }
+
+        .foot-A {
+            padding-top: 30px;
+            width: 100%;
+            height: 200px;
+            color: white;
+            text-align: center;
+            /* background: skyblue; */
+        }
+
+        .foot-A h1 {
+            opacity: 0;
+            padding-bottom: 30px;
+        }
+
+        .foot-A span {
+            /* opacity: 0; */
+            margin-top: 150px;
+            display: inline-block;
+            width: 160px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            border: 1px solid orange;
+            border-radius: 30px;
+            font-size: 20px;
+        }
+
+        .foot-A span:hover {
+            background: orange;
+        }
+
+        .foot-B {
+            width: 100%;
+            height: 100px;
+            padding-top: 30px;
+            /* background: palegreen; */
+            text-align: center;
+        }
+
+        .foot-B a {
+            color: gainsboro;
+            padding-left: 20px;
+            font-size: 30px;
+        }
+
+        .foot-B a:nth-child(1) {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        /* 屏幕小于768 */
+        @media (max-width: 768px) {
+            body {
+                position: relative;
+            }
+
+            .head-L {
+                top: -20px !important;
+                text-align: center !important;
+            }
+
+            .head-L span {
+                transition: all 0.3 !important;
+                width: 120px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 150px;
+                font-size: 12px;
+            }
+
+            /* .head-R{
+                padding-top: 50px;
+            } */
+            .body-A {
+                padding-top: 200px;
+                position: relative !important;
+                text-align: center;
+            }
+
+            .body-A div {
+                padding-top: 30px;
+            }
+
+            .body-B div {
+                padding-top: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .head-L {
+                top: 100px;
+            }
+
+            .head-R {
+                width: 386px;
+                height: 500px;
+            }
+
+            .head-R img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+    <div class="container">
+        <!-- 头部层 -->
+        <div class="head-A row">
+            <div class="head-L col-xs-12 col-sm-6 text-center">
+                <h1>RANE°</h1>
+                <p>minimalist weather</p>
+                <span>DOWNLOAD</span>
+            </div>
+
+            <div class="head-R col-xs-12 col-sm-6 text-center">
+                <img src="http://shrn.io/img/shrn-today.png" alt="">
+            </div>
+        </div>
+
+        <!-- 中间层 -->
+        <div class="body-A row">
+            <div class="body-a col-xs-12 col-sm-4">
+                <img src="http://shrn.io/img/shrn-11.png" alt="">
+                <h1>11°</h1>
+            </div>
+            <div class="body-b col-xs-12 col-sm-4">
+                <img src="http://shrn.io/img/shrn-55.png" alt="">
+                <h1>55°</h1>
+            </div>
+            <div class="body-c col-xs-12 col-sm-4">
+                <img src="http://shrn.io/img/shrn-9.png" alt="">
+                <h1>-9°</h1>
+            </div>
+        </div>
+
+        <!-- 中间二层 -->
+        <div class="body-B">
+            <div class="body-d col-xs-12 col-sm-6">
+                <img src="http://shrn.io/img/shrn-details.png" alt="">
+            </div>
+            <div class="body-e col-xs-12 col-sm-6">
+                <img src="http://shrn.io/img/shrn-forecast.png" alt="">
+            </div>
+        </div>
+
+        <!-- 底部层 -->
+        <div class="foot-A col-xs-12 col-sm-12">
+            <h1>it's just beautiful</h1>
+            <span>GET IT</span>
+        </div>
+
+        <!-- 底部二层 -->
+        <div class="foot-B col-xs-12 col-sm-12">
+            <a href="#">f</a>
+            <a href="#" class="glyphicon glyphicon-book"></a>
+            <a href="#" class="glyphicon glyphicon-download-alt"></a>
+        </div>
+
+
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            if (
+                $(".head-A").offset().top <=
+                $(document).scrollTop() + window.innerHeight
+            ) {
+                $(".head-R").animate({ opacity: 1 }, 1500, function () {
+                    $(".head-L h1").animate({ opacity: 1 }, 800, function () {
+                        $(".head-L p").animate({ opacity: 1 }, 800, function () {
+                            $(".head-L span").animate({ opacity: 1, marginTop: '10px' }, 1000)
+                        });
+                    });
+                });
+            }
+        })
+
+        $(document).on("scroll", function () {
+            if (
+                $(".body-A").offset().top <=
+                $(document).scrollTop() + window.innerHeight
+            ) {
+                $(".body-a img").animate({ opacity: 1 }, 800, function () {
+                    $(".body-b img").animate({ opacity: 1 }, 800, function () {
+                        $(".body-c img").animate({ opacity: 1 }, 800, function () {
+                        })
+                    })
+                })
+            }
+
+            if (
+                $(".body-a h1").offset().top <=
+                $(document).scrollTop() + window.innerHeight
+            ) {
+                $(".body-a h1").animate({ opacity: 1 }, 800, function () {
+                    $(".body-b h1").animate({ opacity: 1 }, 800, function () {
+                        $(".body-c h1").animate({ opacity: 1 }, 800);
+                    })
+                })
+            }
+
+
+            if (
+                $(".body-B").offset().top <=
+                $(document).scrollTop() + window.innerHeight
+            ) {
+                $(".body-d img").animate({ opacity: 1, left: '0px' }, 2000)
+                $(".body-e img").animate({ opacity: 1, left: '0px' }, 2000)
+            }
+
+            if (
+                $(".foot-B").offset().top <=
+                $(document).scrollTop() + window.innerHeight
+            ) {
+                $(".foot-A h1").animate({ opacity: 1 }, 1000)
+                $(".foot-A span").animate({ opacity: 1, marginTop: '0px' }, 2000)
+            }
+        })
+    </script>
+</body>
+
+</html>
