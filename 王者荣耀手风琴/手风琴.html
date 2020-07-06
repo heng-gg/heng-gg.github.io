@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+            width: 500px;
+            background: pink;
+            position: relative;
+        }
+
+        ul li {
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* transition: all 0.5s; */
+        }
+
+        ul li .mask {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* transition: inherit; */
+            color: white;
+            overflow: hidden;
+        }
+
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        h5 {
+            color: aquamarine;
+        }
+
+        ul li .mask .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* transition: inherit; */
+            font-size: 14px;
+            width: 100%;
+            margin-left: 10%;
+        }
+
+        ul li .mask .desc {
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            /* transition: inherit; */
+            /* display: none; */
+            font-size: 24px;
+            width: 100%;
+            margin-left: 10%;
+
+        }
+
+        ul li.active .mask {
+            /* opacity: 0.3; */
+            /* background: rgba(0, 0, 0, 0); */
+            height: 20%;
+        }
+
+        ul li.active .mask .info {
+            left: -100%;
+        }
+
+        ul li.active .mask .desc {
+            left: 0;
+        }
+
+
+        ul li img {
+            width: 100%;
+            display: block;
+        }
+
+        ul li:nth-of-type(1) {
+            position: relative;
+        }
+        ul li:nth-child(2){
+            left: 100px;
+        }
+        ul li:nth-child(3){
+            left: 200px;
+        }
+        ul li:nth-child(4){
+            left: 300px;
+        }
+        ul li:nth-child(5){
+            left: 400px;
+        }
+        ul li:nth-child(6){
+            left: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li><img src="images/datouwang1.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+            </div>
+        </li>
+        <li><img src="images/datouwang2.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>出场</h5>
+                    <h6>NO.1</h6>
+                </div>
+                <div class="desc">
+                    <h6>董卓</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+            </div>
+        </li>
+        <li><img src="images/datouwang3.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>MVP</h5>
+                    <h6>NO.1</h6>
+                </div>
+                <div class="desc">
+                    <h6>吕布</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+            </div>
+        </li>
+        <li><img src="images/datouwang4.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+            </div>
+        </li>
+        <li><img src="images/datouwang5.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+            </div>
+        </li>
+        <li><img src="images/datouwang6.jpg">
+            <div class="mask">
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.最菜</h6>
+                </div>
+                <div class="desc">
+                    <h6>刘雪辉</h6>
+                    <h5>胜率NO.最菜</h5>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+    <!-- JS 版本 -->
+
+<!-- <script>
+    var lis = document.getElementsByTagName("li");
+    var imgs = document.getElementsByTagName("img");
+    var active = document.getElementsByClassName('mask');
+
+    function activeIndex(current) {
+        for (var i = 0; i < lis.length; i++) {
+            if (i <= current) {
+                lis[i].style.left = i * (300 / 5) + "px";
+                active[i].style.top = '0px';
+            } else {
+                lis[i].style.left = 200 + (i - 1) * (300 / 5) + "px";
+                active[i].style.top = '0px';
+
+            }
+            if (i == current) {
+                lis[i].classList.add("active");
+            } else {
+                lis[i].classList.remove("active");
+            }
+        }
+    }
+    activeIndex(0);
+    active[0].style.top = "200px";
+
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].index = i;
+        lis[i].onmouseover = function () {
+            activeIndex(this.index);
+            active[this.index].style.top = "200px";
+        };
+    }
+</script> -->
+
+<script src="./jQuery.js"></script>
+    <!-- JQ,JS混搭版 -->
+<!-- <script>
+    function activeIndex(current) {
+        for (var i = 0; i < $('li').length; i++) {
+            if (i <= current) {
+                $("li").eq(i).css('left', i * (300 / 5) + 'px');
+                $('.mask').eq(i).css('top', '0px');
+            } else {
+                $('li').eq(i).css('left', 200 + (i - 1) * (300 / 5) + "px");
+                $('li').eq(i).css('top', '0px');
+            }
+            if (i == current) {
+                $('li').eq(i).addClass("active").siblings().removeClass("active");
+            }
+        }
+        $('.mask').eq(current).css('top', '200px');
+    }
+
+    activeIndex(0);
+    $('li').mousemove(function () {
+        activeIndex($(this).index());
+    })
+
+</script> -->
+    <!-- JQ版 -->
+<script>
+    function activeIndex(current) {
+        $('li').each(function (index, element) {
+            if (index <= current) {
+                $(element).stop().animate({ left: index * (300 / 5) + 'px' });
+                // $(".mask").eq(index).stop().animate({"top":"0"});
+            } else {
+                $(element).stop().animate({ left: 200 + (index - 1) * (300 / 5) + 'px' });
+                // $("li").eq(index).stop().animate({"top":"0"});
+            }
+            if (index == current) {
+                $('li').eq(index).find(".mask").stop().animate({"height":"20%"});
+                $('li').eq(index).find(".info").stop().animate({"left":"-100%"});
+                $('li').eq(index).find(".desc").stop().animate({"left":"0%"});
+            }else{
+                $('li').eq(index).find(".mask").stop().animate({"height":"100%"});
+                $('li').eq(index).find(".info").stop().animate({"left":"0%"});
+                $('li').eq(index).find(".desc").stop().animate({"left":"100%"});
+            }
+        })
+        // $('.mask').eq(index).css('top', '200px');
+    }
+
+    activeIndex(0);
+
+    $("li").hover(function(){
+        activeIndex($(this).index());
+    })
+</script>
+
+</html>
