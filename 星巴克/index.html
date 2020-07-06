@@ -20,7 +20,7 @@
             .H-left {
                 position: static !important;
                 width: 100% !important;
-                height: 300px !important;
+                height: 200px !important;
                 /* background: red; */
             }
 
@@ -30,30 +30,36 @@
             }
 
             .H-left .h-hade {
-                position: relative;
-                left: -60px;
-                height: 30px;
+                position: static !important;
+                padding-top: 0px !important ;
+            }
+            .H-left .h-hade div{
+                position: relative !important;
+                /* width: 400px; */
             }
 
             .H-left .h-hade div:nth-child(1) {
-                padding-right: 80px !important;
+                position: absolute !important;
+                left: 100px;
+                top: 30px;
             }
 
             .H-left .h-hade div:nth-child(2) {
-                padding-right: 80px !important;
+                position: absolute !important;
+                left: 180px;
+                top: 30px;
             }
 
             .H-left .h-hade div:nth-child(3) {
-                padding-right: 80px !important;
+                position: absolute !important;
+                left: 320px;
+                top: 30px;
             }
 
             .H-left .h-hade div:nth-child(4) {
-                padding-right: 100px !important;
-            }
-
-            .H-left .h-hade .h-san div {
-                position: static !important;
-                right: 10px !important;
+                position: absolute !important;
+                left: 900px;
+                top: 30px;
             }
 
             .H-left .h-body {
@@ -63,8 +69,8 @@
 
             .H-left .h-foot {
                 /* position: static !important; */
-                margin-left: -40px;
-                top: 120px;
+                margin-left: -27%;
+                padding-top: 5%;
                 width: 150px;
                 height: 50px;
             }
@@ -102,8 +108,50 @@
         }
     </style>
 
-    <!-- 媒体查询  页面小于640px -->
+
+
     <style>
+        @media(max-width: 768px) {
+            .H-left .h-hade {
+                position: static !important;
+                padding-top: 0px !important ;
+            }
+            .H-left .h-hade div{
+                position: relative !important;
+            }
+
+            .H-left .h-hade div:nth-child(1) {
+                position: absolute !important;
+                left: 100px;
+                top: 30px;
+            }
+
+            .H-left .h-hade div:nth-child(2) {
+                position: absolute !important;
+                left: 180px;
+                top: 30px;
+            }
+
+            .H-left .h-hade div:nth-child(3) {
+                position: absolute !important;
+                left: 300px;
+                top: 30px;
+            }
+
+            .H-left .h-hade div:nth-child(4) {
+                position: absolute !important;
+                left: 700px;
+                top: 30px;
+            }
+
+            .H-left .h-foot{
+                margin-left: -180px;
+                padding-top: 0px;
+                padding-left: 50px;
+            }
+        } 
+
+        /* <!-- 媒体查询  页面小于640px --> */
         @media(max-width: 640px) {
             .H-left {
                 position: static !important;
@@ -173,7 +221,7 @@
         }
 
         .H-left .h-hade div:nth-child(1) {
-            padding-right: 20px;
+            padding-right: 30px;
         }
 
         .H-left .h-hade div:nth-child(2) {
@@ -217,10 +265,14 @@
         .H-left .h-foot {
             position: relative;
             top: 40%;
-            left: 7%;
+            left: 20%;
         }
 
-        .H-left .h-foot a {
+        .H-left .h-foot div {
+            float: left;
+        }
+
+        .H-left .h-foot div a {
             text-decoration: none;
             font-size: 15px;
             color: forestgreen;
@@ -298,7 +350,7 @@
             <div class="h-img navbar-left"><img
                     src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg" alt=""></div>
             <!-- 菜单栏 -->
-            <div class="h-hade clearfix navbar-right">
+            <div class="h-hade navbar-right">
                 <div class="h-mendian navbar-left"><a href="#">门店</a></div>
                 <div class="h-myzhanghu navbar-left"><a href="#">我的账户</a></div>
                 <div class="h-caidan navbar-left"><a href="#">菜单</a></div>
@@ -314,9 +366,11 @@
                 </div>
             </div>
             <!-- 左侧登录区 -->
-            <div class="h-foot">
-                <img src="./images/icon-account.svg">
-                <a href="#">登录</a>
+            <div class="h-foot col-xs-12">
+                <div>
+                    <img src="./images/icon-account.svg">
+                    <a href="#">登录</a>
+                </div>
                 <span class="h-zhuce">注册</span>
             </div>
         </div>
