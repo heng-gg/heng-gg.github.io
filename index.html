@@ -53,6 +53,38 @@
             max-width: 100%;
             max-height: 100%;
         }
+
+        /* -------------------------------------------------------------- */
+        a::before{
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        a:hover::before{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+            animation-timing-function: linear;
+
+        }
+        a:hover{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+            animation-timing-function: linear;
+
+        }
+        @keyframes mybtn{
+            100%{
+                background-position:-400% 0;
+            }
+        }
     </style>
 </head>
 
