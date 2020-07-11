@@ -5,66 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>键盘敲烂,工资过万!</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        h1 {
+            font-family: "微软雅黑";
+            position: relative;
+            font-weight: 700;
+            -webkit-line-clamp: 2;
+            background-image: -webkit-linear-gradient(left, rgb(255, 97, 124), rgb(130, 39, 248), rgb(12, 176, 241));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body {
+            text-align: center;
+            background: url("./images/bgi.jpg");
+        }
+
         a {
-            width: 200px;
-            height: 150px;
+            width: 360px;
+            height: 300px;
             display: inline-block;
         }
 
         img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <!-- JS阶段项目 -->
-    <a href="./JS/滚动时间.html">
-        <img src="./images/zp01.png" alt="">
-    </a>
-    <a href="./JS/LED时钟.html">
-        <img src="./images/zp02.png" alt="">
-    </a>
-    <a href="./JS/抽奖奖.html">
-        <img src="./images/zp10.png" alt="">
-    </a>
+    <div class="container">
+        <div class="row">
+            <!-- JS阶段项目 -->
+            <h1 class="col-xs-12">This is JS 阶段的项目</h1>
+            <a href="./JS/滚动时间.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp01.png" alt="">
+            </a>
+            <a href="./JS/LED时钟.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp02.png" alt="">
+            </a>
+            <a href="./JS/抽奖奖.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp03.png" alt="">
+            </a>
 
-    <br>
-    <!-- 响应式网页 -->
-    <a href="./雷恩/index.html">
-        <img src="./images/zp04.png" alt="">
-    </a>
-    <a href="./星巴克/index.html">
-        <img src="./images/zp06.png" alt="">
-    </a>
-    <a href="./美女选拔响应式/index.html">
-        <img src="./images/zp05.png" alt="">
-    </a>
+            <!-- 响应式网页 -->
+            <h1 class="col-xs-12">This is 响应式 阶段的项目</h1>
+            <a href="./雷恩/index.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp04.png" alt="">
+            </a>
+            <a href="./美女选拔响应式/index.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp05.png" alt="">
+            </a>
+            <a href="./星巴克/index.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp06.png" alt="">
+            </a>
 
-    <br>
-    <!-- 3D小项目 -->
-    <a href="./3D/3D案例.html">
-        <img src="./images/zp11.png" alt="">
-    </a>
-    <a href="./3D/3D盒子.html">
-        <img src="./images/zp12.png" alt="">
-    </a>
-    <a href="./3D/3D案例2.html">
-        <img src="./images/zp13.png" alt="">
-    </a>
-    <br>
-    <!-- CSS3阶段项目 -->
-    <a href="./css3/小案例.html">
-        <img src="./images/zp07.png" alt="">
-    </a>
-    <a href="./css3/小案例2.html">
-        <img src="./images/zp08.png" alt="">
-    </a>
-    <a href="./css3/小案例3.html">
-        <img src="./images/zp09.png" alt="">
-    </a>
+            <!-- CSS3阶段项目 -->
+            <h1 class="col-xs-12">This is CSS3 阶段的项目</h1>
+            <a href="./css3/小案例.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp07.png" alt="">
+            </a>
+            <a href="./css3/小案例2.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp08.png" alt="">
+            </a>
+            <a href="./css3/小案例3.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp09.png" alt="">
+            </a>
+
+            <!-- 3D小项目 -->
+            <h1 class="col-xs-12">This is 3D的项目</h1>
+            <a href="./3D/3D盒子.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp10.png" alt="">
+            </a>
+            <a href="./3D/3D案例.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp11.png" alt="">
+            </a>
+            <a href="./3D/3D案例2.html" class="col-xs-12 col-sm-4">
+                <img src="./images/zp12.png" alt="">
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
