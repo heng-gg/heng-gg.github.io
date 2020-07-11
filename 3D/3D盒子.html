@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D方盒子</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            perspective: 1800px;
+            background: linear-gradient(145deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            transform-style: preserve-3d;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            /* background: rgba(0, 0, 0, 0.2); */
+            transform-style: preserve-3d;
+        }
+        .side{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 10px solid red;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.5;
+        }
+        .top{
+            background: lightsalmon;
+            transform: rotateX(90deg) translateZ(150px)
+        }
+        .bottom{
+            background: lightblue;
+            transform: rotateX(-90deg) translateZ(150px)
+        }
+        .left{
+            background: lightgreen;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .right{
+            background: lightpink;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        .biao{
+            background: magenta;
+            transform:translateZ(150px);
+        }
+        .hou{
+            background: lightslategrey;
+            transform: translateZ(-150px) rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="side top"><h2>上层</h2></div>
+        <div class="side bottom"><h2>下层</h2></div>
+        <div class="side left"><h2>左层</h2></div>
+        <div class="side right"><h2>右层</h2></div>
+        <div class="side biao"><h2>表层</h2></div>
+        <div class="side hou"><h2>后层</h2></div>
+    </div>
+</body>
+<script>
+    document.body.onmousemove = function (event) {
+      console.log(event.clientX, event.clientY);
+      document.querySelector(".box").style.transform =
+      "rotateX("+ -event.clientY+"deg) rotateY("+ -event.clientX+"deg)";
+    };
+</script>
+</html>

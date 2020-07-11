@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+
+        }
+        body{
+            background: linear-gradient(145deg,lightcoral,lightgreen,lightseagreen,lightsalmon);
+        }
+        .box{
+            margin-top: 100px;
+            text-align: center;
+            /* background: lightsalmon; */
+            border: 10px solid lightskyblue;
+        }
+        ul{
+            width: 350px;
+            height: 350px;
+            /* background-color: skyblue; */
+            position: relative;
+            list-style: none;
+            margin: 0 auto;
+            border-radius: 25px;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            border-radius: 50px;
+            line-height: 100px;
+            color:red;
+            font-weight: 900;
+        }
+        li:nth-child(1){
+            left: 0;
+            top: 0;
+        }
+        li:nth-child(2){
+            left: 125px;
+            top: 0;
+        }
+        li:nth-child(3){
+            left: 250px;
+            top: 0;
+        }
+        li:nth-child(4){
+            left: 250px;
+            top: 125px;
+        }
+        li:nth-child(5){
+            left: 250px;
+            top: 250px;
+        }
+        li:nth-child(6){
+            left: 125px;
+            top: 250px;
+        }
+        li:nth-child(7){
+            left: 0;
+            top: 250px;
+        }
+        li:nth-child(8){
+            left: 0;
+            top: 125px;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            font-size: 18px;
+            border: 3px solid red;
+            background-color:rgb(69, 243, 34);
+            color: red;
+            border-radius: 50px;
+            margin-top: 125px;
+            outline: none;
+        }
+        li.active{
+            /* background-color: red; */
+            color: lightgoldenrodyellow;
+            text-decoration: none;
+            /* border-radius: 50px; */
+            text-transform: uppercase;
+            /* transform: translate(-50% ,-50%); */
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            z-index: 1;
+        }
+        li.active::before{
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(20px);
+            z-index: -1;
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+        }
+        /* ---------------------------------------------------------------------- */
+        button{
+            text-decoration: none;
+            color: lawngreen;
+            /* border-radius: 50px; */
+            text-transform: uppercase;
+            /* transform: translate(-50% ,-50%); */
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            z-index: 1;
+        }
+        button::before{
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        button:hover::before{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+
+        }
+        button:hover{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+
+        }
+        @keyframes mybtn{
+            100%{
+                background-position:-400% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Box">
+        <ul class="box">
+            <li>华为P40</li>
+            <li>小米10</li>
+            <li>OPPO Ace2</li>
+            <li>小米小爱音响</li>
+            <li>VIVO X50</li>
+            <li>三星S20</li>
+            <li>iphone 11</li>
+            <li>渐变色水杯</li>
+        <button><b><i>开始抽奖奖</i></b></button>
+        </ul>
+    </div>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        var lis = document.getElementsByTagName("li");
+        var flag = 0;
+        var index = true;
+        btn.onclick = function(){
+            if(index){
+                var id;
+                flag %= 8;
+                console.log("开始抽奖");
+
+                var x = Math.floor(Math.random()*lis.length);
+                console.log("恭喜你抽中了:",x);
+                // alert("恭喜你抽中了:");
+
+                function dataView(ms){
+                    var n = setInterval(function(){
+
+                        flag++;
+                        console.log(flag,flag%8);
+
+                        for(var i=0;i<lis.length;i++){
+                            if(i == flag%8){
+                                lis[i].classList.add("active");
+                            }else{
+                                lis[i].classList.remove("active");
+                            }
+                        }
+
+                        if(flag == x +8*8){
+                            clearInterval(id);
+                            console.log("中奖啦!!!");
+                            // alert("恭喜你抽中了:"+lis[x].innerHTML);  
+                            
+                            index = true;
+                        }
+
+                        if(flag == 8*1){
+                            clearInterval(id);
+
+                            id = dataView(130);
+                        }
+
+                        if(flag == 8*2){
+                            clearInterval(id);
+
+                            id = dataView(80);
+                        }
+
+                        if(flag == 8*6){
+                            clearInterval(id);
+
+                            id = dataView(130);
+                        }
+
+                        if(flag == 8*7){
+                            clearInterval(id);
+
+                            id = dataView(200);
+                        }
+                    },ms);
+
+                    return n;
+
+                }
+                id = dataView(200);
+            }
+            index = false;
+
+        }
+    </script>
+</body>
+</html>

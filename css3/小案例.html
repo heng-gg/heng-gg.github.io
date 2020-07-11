@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫彩流光按钮</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height:100%;
+        }
+        body{
+            height: 100%;
+            background: linear-gradient(145deg,rgba(167, 104, 238, 0.63),rgba(34, 176, 233, 0.692));
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+        }
+        a{
+            text-decoration: none;
+            position: absolute;
+            color: lawngreen;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transform: translate(-50% ,-50%);
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 100px;
+            font-size: 24px;
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            z-index: 1;
+        }
+        a::before{
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        a:hover::before{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+
+        }
+        a:hover{
+            animation: mybtn 2s infinite;
+            animation-direction:alternate;
+
+        }
+        @keyframes mybtn{
+            100%{
+                background-position:-400% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#">BUTTON</a>
+</body>
+</html>

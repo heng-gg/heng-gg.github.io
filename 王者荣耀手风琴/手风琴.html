@@ -10,7 +10,17 @@
             margin: 0;
             padding: 0;
         }
-
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(24, 22, 22, 0.658);
+        }
+        
         ul {
             list-style: none;
             overflow: hidden;
@@ -95,102 +105,111 @@
         ul li:nth-of-type(1) {
             position: relative;
         }
-        ul li:nth-child(2){
+
+        ul li:nth-child(2) {
             left: 100px;
         }
-        ul li:nth-child(3){
+
+        ul li:nth-child(3) {
             left: 200px;
         }
-        ul li:nth-child(4){
+
+        ul li:nth-child(4) {
             left: 300px;
         }
-        ul li:nth-child(5){
+
+        ul li:nth-child(5) {
             left: 400px;
         }
-        ul li:nth-child(6){
+
+        ul li:nth-child(6) {
             left: 600px;
         }
     </style>
 </head>
 
 <body>
-    <ul class="box">
-        <li><img src="images/datouwang1.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>胜率</h5>
-                    <h6>NO.1</h6>
+    <div class="DIV">
+
+
+        <ul class="box">
+            <li><img src="images/datouwang1.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>胜率</h5>
+                        <h6>NO.1</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>墨子</h6>
+                        <h5>胜率NO.1</h5>
+                    </div>
                 </div>
-                <div class="desc">
-                    <h6>墨子</h6>
-                    <h5>胜率NO.1</h5>
+            </li>
+            <li><img src="images/datouwang2.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>出场</h5>
+                        <h6>NO.1</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>董卓</h6>
+                        <h5>胜率NO.1</h5>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li><img src="images/datouwang2.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>出场</h5>
-                    <h6>NO.1</h6>
+            </li>
+            <li><img src="images/datouwang3.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>MVP</h5>
+                        <h6>NO.1</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>吕布</h6>
+                        <h5>胜率NO.1</h5>
+                    </div>
                 </div>
-                <div class="desc">
-                    <h6>董卓</h6>
-                    <h5>胜率NO.1</h5>
+            </li>
+            <li><img src="images/datouwang4.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>胜率</h5>
+                        <h6>NO.1</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>墨子</h6>
+                        <h5>胜率NO.1</h5>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li><img src="images/datouwang3.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>MVP</h5>
-                    <h6>NO.1</h6>
+            </li>
+            <li><img src="images/datouwang5.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>胜率</h5>
+                        <h6>NO.1</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>墨子</h6>
+                        <h5>胜率NO.1</h5>
+                    </div>
                 </div>
-                <div class="desc">
-                    <h6>吕布</h6>
-                    <h5>胜率NO.1</h5>
+            </li>
+            <li><img src="images/datouwang6.jpg">
+                <div class="mask">
+                    <div class="info">
+                        <h5>胜率</h5>
+                        <h6>NO.最菜</h6>
+                    </div>
+                    <div class="desc">
+                        <h6>刘雪辉</h6>
+                        <h5>胜率NO.最菜</h5>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li><img src="images/datouwang4.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>胜率</h5>
-                    <h6>NO.1</h6>
-                </div>
-                <div class="desc">
-                    <h6>墨子</h6>
-                    <h5>胜率NO.1</h5>
-                </div>
-            </div>
-        </li>
-        <li><img src="images/datouwang5.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>胜率</h5>
-                    <h6>NO.1</h6>
-                </div>
-                <div class="desc">
-                    <h6>墨子</h6>
-                    <h5>胜率NO.1</h5>
-                </div>
-            </div>
-        </li>
-        <li><img src="images/datouwang6.jpg">
-            <div class="mask">
-                <div class="info">
-                    <h5>胜率</h5>
-                    <h6>NO.最菜</h6>
-                </div>
-                <div class="desc">
-                    <h6>刘雪辉</h6>
-                    <h5>胜率NO.最菜</h5>
-                </div>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </body>
 
-    <!-- JS 版本 -->
+<!-- JS 版本 -->
 
 <!-- <script>
     var lis = document.getElementsByTagName("li");
@@ -227,7 +246,7 @@
 </script> -->
 
 <script src="./jQuery.js"></script>
-    <!-- JQ,JS混搭版 -->
+<!-- JQ,JS混搭版 -->
 <!-- <script>
     function activeIndex(current) {
         for (var i = 0; i < $('li').length; i++) {
@@ -251,7 +270,7 @@
     })
 
 </script> -->
-    <!-- JQ版 -->
+<!-- JQ版 -->
 <script>
     function activeIndex(current) {
         $('li').each(function (index, element) {
@@ -263,13 +282,13 @@
                 // $("li").eq(index).stop().animate({"top":"0"});
             }
             if (index == current) {
-                $('li').eq(index).find(".mask").stop().animate({"height":"20%"});
-                $('li').eq(index).find(".info").stop().animate({"left":"-100%"});
-                $('li').eq(index).find(".desc").stop().animate({"left":"0%"});
-            }else{
-                $('li').eq(index).find(".mask").stop().animate({"height":"100%"});
-                $('li').eq(index).find(".info").stop().animate({"left":"0%"});
-                $('li').eq(index).find(".desc").stop().animate({"left":"100%"});
+                $('li').eq(index).find(".mask").stop().animate({ "height": "20%" });
+                $('li').eq(index).find(".info").stop().animate({ "left": "-100%" });
+                $('li').eq(index).find(".desc").stop().animate({ "left": "0%" });
+            } else {
+                $('li').eq(index).find(".mask").stop().animate({ "height": "100%" });
+                $('li').eq(index).find(".info").stop().animate({ "left": "0%" });
+                $('li').eq(index).find(".desc").stop().animate({ "left": "100%" });
             }
         })
         // $('.mask').eq(index).css('top', '200px');
@@ -277,7 +296,7 @@
 
     activeIndex(0);
 
-    $("li").hover(function(){
+    $("li").hover(function () {
         activeIndex($(this).index());
     })
 </script>
