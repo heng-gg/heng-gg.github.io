@@ -69,10 +69,11 @@
 
             .H-left .h-foot {
                 /* position: static !important; */
-                margin-left: -27%;
-                padding-top: 5%;
-                width: 150px;
-                height: 50px;
+                /* margin-left: -27%; */
+                /* padding-top: 5%; */
+                /* width: 150px; */
+                /* height: 50px; */
+                margin-left: -120px;
             }
 
             .H-right {
@@ -144,12 +145,16 @@
                 top: 30px;
             }
 
-            .H-left .h-foot{
-                margin-left: -180px;
-                padding-top: 0px;
-                padding-left: 50px;
-            }
+            
         } 
+        @media(max-width: 720px){
+            .H-left .h-foot{
+                margin-left: -260px;
+                padding-top: 60px;
+                /* padding-top: 0px; */
+                /* padding-left: 50px; */
+            }
+        }
 
         /* <!-- 媒体查询  页面小于640px --> */
         @media(max-width: 640px) {
@@ -212,16 +217,17 @@
         }
 
         .H-left .h-img {
-            top: 5%;
+            padding-top: 10px;
+            padding-left: 10px;
         }
 
         .H-left .h-hade {
-            padding-top: 5%;
-            float: right;
+            padding-top: 25px;
+            /* float: right; */
         }
 
         .H-left .h-hade div:nth-child(1) {
-            padding-right: 30px;
+            padding-right: 20px;
         }
 
         .H-left .h-hade div:nth-child(2) {
@@ -347,10 +353,10 @@
         <div class="H-left ">
             <!--  col-xs-12 col-sm-3 col-md-3 -->
             <!-- logo图片 -->
-            <div class="h-img navbar-left"><img
+            <div class="h-img navbar-left col-xs-2"><img
                     src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg" alt=""></div>
             <!-- 菜单栏 -->
-            <div class="h-hade navbar-right">
+            <div class="h-hade navbar-right col-xs-10">
                 <div class="h-mendian navbar-left"><a href="#">门店</a></div>
                 <div class="h-myzhanghu navbar-left"><a href="#">我的账户</a></div>
                 <div class="h-caidan navbar-left"><a href="#">菜单</a></div>
