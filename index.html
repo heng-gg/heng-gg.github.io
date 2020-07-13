@@ -46,12 +46,16 @@
 
         a {
             width: 360px;
-            height: 300px;
             display: inline-block;
-            padding-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 0;
+            transition: all 0.5s;
         }
 
         img {
+            border-radius: 15px;
+            margin: 15px 0 15px 0;
             max-width: 100%;
             max-height: 100%;
         }
@@ -66,21 +70,18 @@
             bottom: -2px;
             background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
             background-size: 400%;
-            /* border-radius: 50px; */
             filter: blur(20px);
             z-index: -1;
+            opacity: 0;
         }
         a:hover::before{
+            opacity: 1;
             animation: mybtn 2s infinite;
-            /* animation-direction:alternate; */
             animation-timing-function: linear;
 
         }
         a:hover{
-            animation: mybtn 2s infinite;
-            /* animation-direction:alternate; */
-            animation-timing-function: linear;
-
+            margin-top: -5px;
         }
         @keyframes mybtn{
             100%{
@@ -130,7 +131,7 @@
             </a>
 
             <!-- 3D小项目 -->
-            <h1 class="col-xs-12">This is 3D的项目</h1>
+            <h1 class="col-xs-12">This is 3D 的项目</h1>
             <a href="./3D/3D盒子.html" class="col-xs-12 col-sm-4">
                 <img src="./images/zp10.png" alt="">
             </a>

@@ -14,15 +14,23 @@
             height: 100%;
         }
         body{
-            background: linear-gradient(90deg,aqua,lightgreen,rgb(185, 235, 70),rgb(248, 145, 49));
+            /* background: linear-gradient(90deg,aqua,lightgreen,rgb(185, 235, 70),rgb(248, 145, 49)); */
+            background: #2C3E50;
+            /* background: #03e9f4; */
+            color: #050801;
+            box-shadow: 0 0 10px #03e9f4,
+                        0 0 20px #03e9f4,
+                        0 0 30px #03e9f4,
+                        0 0 40px #03e9f4;
         }
 
         .content {
             width: 480px;
             height: 69px;
             /* background: rgb(191, 117, 252); */
+            background: #03e9f4;
             margin: 300px auto;
-            border: 10px sloid rgb(84, 185, 243);
+            /* border: 10px sloid rgb(84, 185, 243); */
             /* border-right: none; */
         }
 
@@ -35,7 +43,8 @@
             float: left;
             width: 9px;
             height: 9px;
-            background: #222222;
+            /* background: #222222; */
+            background: #2C3E50;
             margin: 0 1px 1px 0;
             border-radius: 1px;
             transition: all 0.3s;
@@ -43,14 +52,15 @@
 
         .content .num div.active {
             background: #ff00aa;
-            /* background: white; */
+            /* background: lightgreen; */
+            /* background: linear-gradient(180deg,transparent,lightgreen); */
+
         }
     </style>
 </head>
 
 <body>
     <div class="content">
-
     </div>
     <script>
         var content = document.querySelector('.content');
