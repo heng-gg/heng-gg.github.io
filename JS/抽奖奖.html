@@ -14,7 +14,8 @@
 
         }
         body{
-            background: linear-gradient(145deg,lightcoral,lightgreen,lightseagreen,lightsalmon);
+            /* background: linear-gradient(145deg,lightcoral,lightgreen,lightseagreen,lightsalmon); */
+            background: slategrey;
         }
         .box{
             margin-top: 100px;
@@ -23,8 +24,8 @@
             border: 10px solid lightskyblue;
         }
         ul{
-            width: 350px;
-            height: 350px;
+            width: 356px;
+            height: 356px;
             /* background-color: skyblue; */
             position: relative;
             list-style: none;
@@ -32,6 +33,7 @@
             border-radius: 25px;
         }
         li{
+            overflow: hidden;
             width: 100px;
             height: 100px;
             background-color: pink;
@@ -40,10 +42,18 @@
             line-height: 100px;
             color:red;
             font-weight: 900;
+            border: 2px solid red;
+            z-index: 2;
+        }
+        li>img{
+            max-width: 100%;
+            min-height: 100%;
+            z-index: 1;
         }
         li:nth-child(1){
             left: 0;
             top: 0;
+
         }
         li:nth-child(2){
             left: 125px;
@@ -84,7 +94,7 @@
             margin-top: 125px;
             outline: none;
         }
-        li.active{
+        li>.active{
             /* background-color: red; */
             color: lightgoldenrodyellow;
             text-decoration: none;
@@ -93,7 +103,7 @@
             /* transform: translate(-50% ,-50%); */
             background: linear-gradient(90deg,rgb(226, 92, 92),rgb(185, 26, 190),rgb(16, 179, 243),rgb(12, 241, 12));
             background-size: 400%;
-            z-index: 1;
+            z-index: 9;
         }
         li.active::before{
             content: "";
@@ -106,7 +116,7 @@
             background-size: 400%;
             border-radius: 50px;
             filter: blur(20px);
-            z-index: -1;
+            z-index: 99;
             animation: mybtn 2s infinite;
             animation-direction:alternate;
         }
@@ -121,7 +131,7 @@
             background-size: 400%;
             z-index: 1;
         }
-        button::before{
+        /* button::before{
             content: "";
             position: absolute;
             left: -5px;
@@ -140,7 +150,7 @@
             animation-timing-function: linear;
 
 
-        }
+        } */
         button:hover{
             animation: mybtn 2s infinite;
             animation-direction:alternate;
@@ -154,17 +164,18 @@
     </style>
 </head>
 <body>
+    <!--  -->
     <div class="Box">
         <ul class="box">
-            <li>华为P40</li>
-            <li>小米10</li>
-            <li>OPPO Ace2</li>
-            <li>小米小爱音响</li>
-            <li>VIVO X50</li>
-            <li>三星S20</li>
-            <li>iphone 11</li>
-            <li>渐变色水杯</li>
-        <button><b><i>开始抽奖奖</i></b></button>
+            <li data-i="华为P40"><img src="./images/huawei.png" alt=""></li>
+            <li data-i="小米10"><img src="./images/xiaomi.png" alt=""></li>
+            <li data-i="OPPO Ace2"><img src="./images/oppo.png" alt=""></li>
+            <li data-i="小米小爱音响"><img src="./images/xiaoai.png" alt=""></li>
+            <li data-i="VIVO X50"><img src="./images/vivo.png" alt=""></li>
+            <li data-i="三星S20"><img src="./images/sanxing.png" alt=""></li>
+            <li data-i="iphone 11"><img src="./images/iphone.png" alt=""></li>
+            <li data-i="渐变色水杯"><img src="./images/shuibei.png" alt=""></li>
+        <button><b><i>开始抽奖</i></b></button>
         </ul>
     </div>
 
@@ -173,6 +184,7 @@
         var lis = document.getElementsByTagName("li");
         var flag = 0;
         var index = true;
+        // console.log(lis[1].dataset.i);
         btn.onclick = function(){
             if(index){
                 var id;
@@ -187,7 +199,7 @@
                     var n = setInterval(function(){
 
                         flag++;
-                        console.log(flag,flag%8);
+                        // console.log(flag,flag%8);
 
                         for(var i=0;i<lis.length;i++){
                             if(i == flag%8){
@@ -200,7 +212,10 @@
                         if(flag == x +8*8){
                             clearInterval(id);
                             console.log("中奖啦!!!");
-                            // alert("恭喜你抽中了:"+lis[x].innerHTML);  
+                            setTimeout(function(){
+                            alert("恭喜你抽中了:"+lis[x].dataset.i);  
+
+                            },300)
                             
                             index = true;
                         }
