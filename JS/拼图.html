@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图游戏</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #777;
+            position: relative;
+        }
+        .ti{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        h2{
+            width: 100%;
+        }
+        p{
+            width: 100%;
+        }
+        .stage {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 500px;
+            height: 500px;
+            /* background: lightskyblue; */
+            background-image: url("./images/05.png");
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .stage li {
+            background: lime;
+            border-radius: 5px;
+            box-shadow: 0 0 0 3px white inset;
+            background-image: url("./images/01.png");
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 0 auto;
+            list-style: none;
+            background: rgb(247, 144, 144);
+            border: 2px solid red;
+            color: rgb(214, 218, 214);
+            font-size: 18px;
+            font-weight: 700;
+            width: 100px;
+            height: 30px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            margin-top: -2px;
+        }
+
+        .ull {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .ull li {
+            float: left;
+            margin: 2px;
+            width: 50px;
+            height: 30px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            color: rgb(214, 218, 214);
+            background: rgb(235, 153, 153);
+            border: 1px solid red;
+        }
+
+        .ull1 {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-top: 32px;
+            margin-right: -180px;
+            display: none;
+        }
+
+        .ull1 li {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 2px;
+            border: 1px solid black;
+            transition: all 0.3s;
+        }
+
+        .ull1 li:hover {
+            margin-top: -2px;
+
+        }
+
+        .ull1 li img {
+            width: 100%;
+            height: 1005;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ti" style="color: skyblue;" >
+        <h2>花木兰拼图游戏规则:</h2>
+        <p >1.若要挑战难度,请先选择木兰皮肤喔!</p>
+        <p>2.开始游戏请点击打乱图片!</p>
+    </div>
+    <ul class="stage"></ul>
+    <div>
+        <button class="dltp">打乱拼图</button>
+        <button class="huan">游戏难度</button>
+        <ul class="ull">
+            <li>4 x 4</li>
+            <li>5 x 5</li>
+            <li>6 x 6</li>
+            <li>8 x 8</li>
+        </ul>
+        <button class="huantu">选择图片</button>
+        <ul class="ull1">
+            <li><img src="./images/01.png" alt=""></li>
+            <li><img src="./images/02.png" alt=""></li>
+            <li><img src="./images/03.png" alt=""></li>
+            <li><img src="./images/04.png" alt=""></li>
+            <li><img src="./images/05.png" alt=""></li>
+            <li><img src="./images/06.png" alt=""></li>
+        </ul>
+    </div>
+    <!-- <img src="./timg.gif" alt=""> -->
+    <script>
+        var size = 3;
+        var huan = document.querySelector(".huan");
+        var ull = document.querySelector(".ull");
+        var lis = ull.querySelectorAll("li")
+        var ull1 = document.querySelector(".ull1");
+        var lis1 = ull1.querySelectorAll("li")
+        var xxx = 0;
+        var yyy = 0;
+
+        var stage = document.querySelector(".stage");
+        var ht = document.querySelector(".huantu");
+        setting(3, 0)
+
+        var index;
+        
+        
+        // 循环创建一个 size*size 的宫格
+        function setting(size, index) {
+            for (var i = 0; i < size * size; i++) {
+                // 创建li
+                var node = document.createElement("li");
+
+                // 设置当前所循环到的li的 left&top 尺寸
+                node.style.width = 100 / size + "%";
+                node.style.height = 100 / size + "%";
+
+                // 动态设置偏移量
+                node.style.backgroundImage = "url('./images/0" + (index + 1) + ".png')";
+                node.style.backgroundPosition = (i % size) * -100 + "%" + Math.floor(i / size) * -100 + "%";
+
+                // 设置当前循环到的背景图位置    
+                node.style.top = Math.floor(i / size) * (100 / size) + "%";
+                node.style.left = (i % size) * (100 / size) + "%";
+
+                // 设置背景图像的大小
+                node.style.backgroundSize = size * 100 + "% auto";
+
+                // 设置元素可拖动
+                node.draggable = "true";
+
+                // 设置自定义属性  
+                node.id = "card" + i;
+
+                var stage = document.querySelector(".stage");
+
+                // 将创建的节点添加到 UL
+                stage.appendChild(node);
+            }
+        }
+
+        yidong();
+
+        function yidong() {
+            var cards = document.querySelectorAll(".stage li");
+            cards.forEach(function (element, index) {
+                // 拖动当前鼠标点击的元素
+                element.ondragstart = function (event) {
+                    event.dataTransfer.setData("text", event.target.id);
+                };
+
+                // 被拖动的元素所摆放的位置
+                element.ondragover = function (event) {
+                    // 阻止默认事件
+                    event.preventDefault();
+                };
+
+                // 拖动完成，鼠标释放后
+                element.ondrop = function (event) {
+                    // 获取需要交换的两个元素
+                    var e1 = event.target;
+                    var e2 = document.getElementById(event.dataTransfer.getData("text"))
+
+                    // 创建一个tmp对象用于存储一个对象的定位点
+                    var tmp = {
+                        top: e1.style.top,
+                        left: e1.style.left
+                    };
+
+                    // 将坐标赋给鼠标所拖动的元素  主动者
+                    e1.style.top = e2.style.top;
+                    e1.style.left = e2.style.left;
+
+                    // 将元素放置到鼠标所选中的元素的原坐标   被动者
+                    e2.style.top = tmp.top;
+                    e2.style.left = tmp.left;
+
+                    // 判断每个li元素当前定位点是否为初始起点  
+                    var check = Array.prototype.every.call(cards, function (element, index) {
+                        return (
+                            parseInt(element.style.top) == parseInt(Math.floor(index / size) * (100 / size) + "%")
+                            && parseInt(element.style.left) == parseInt((index % size) * (100 / size) + "%")
+                        );
+                    });
+                    // console.log(check);
+                    // 判断拼图是否成功
+                    if (check) {
+                        console.log("成功");
+                        setTimeout(function(){
+                        alert("恭喜你!成功完成此拼图,尝试一下增加游戏难度吧")
+                        },300)
+                    }
+                };
+            })
+        }
+
+        // 点击换图
+        ht.onclick = function () {
+
+            if (yyy % 2 == 0) {
+                stage.innerHTML = "";
+                ull1.style.display = "block";
+                for (var k = 0; k < lis1.length; k++) {
+                    lis1[k].setAttribute("data-idnex", k);
+                    lis1[k].onclick = function () {
+                        index = Number(this.getAttribute("data-idnex"))
+                        setting(size, index)
+                    }
+                }
+            } else {
+                ull1.style.display = "none";
+            }
+            yyy++;
+            yidong();
+
+            huan.onclick = function () {
+            // 获取ul列表
+            var stage = document.querySelector(".stage");
+            if (this.innerHTML != "游戏难度") {
+                stage.innerHTML = "";
+            }
+            if (xxx % 2 == 0) {
+                ull.style.display = "block";
+            } else {
+                stage.innerHTML = "";
+
+                ull.style.display = "none";
+            }
+            xxx++;
+            lis.forEach(function (element, index) {
+                element.onclick = function () {
+                    huan.innerHTML = this.innerHTML;
+                }
+            })
+            size = parseInt(huan.innerHTML.charAt(0));
+            setting(size, index)
+            // 获取所有的li标片
+            var cards = document.querySelectorAll(".stage li");
+
+            // 设置随机数函数  返回0到9的随机数
+            function random() {
+                return Math.floor(Math.random() * size * size);
+            }
+            yidong();
+
+        }
+        }
+
+        // 点击洗牌按钮
+        var btn1 = document.querySelector(".dltp")
+        btn1.onclick = function () {
+            yidong();
+            shuffle();
+        }
+
+        // 随机洗牌  洗牌函数
+        function shuffle() {
+            var cards = document.querySelectorAll(".stage li");
+            // 创建一个空数组  循环设置其内容为 li的个数
+            var arr = [];
+            for (var i = 0; i < size * size; i++) {
+                arr.push(i);
+            }
+
+            // 创建一个空数组  用于存储打乱后的数组
+            var tmp = [];
+            for (var i = 0; i < size * size; i++) {
+                tmp.push(
+                    arr.splice(Math.floor(Math.random() * arr.length), 1)[0]
+                );
+            }
+
+            // 循环所有的li标签  并动态随机摆放他们的位置
+            cards.forEach(function (element, index) {
+                element.style.left = (tmp[index] % size) * (100 / size) + "%";
+                element.style.top = Math.floor(tmp[index] / size) * (100 / size) + "%";
+            })
+        }
+    </script>
+</body>
+
+</html>

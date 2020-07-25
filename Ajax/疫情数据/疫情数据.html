@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付宝疫情数据</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="GuoNei">国内疫情</div>
+        <div class="HaiWai">海外疫情</div>
+        <!-- 国内疫情 -->
+        <ul class="box-GN">
+            <li>
+                <h5>累计确诊</h5>
+                <h3 class="ljqz">86500</h3>
+                <h6>较上日<span class="ljqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>累计治愈</h5>
+                <h3 class="ljzy">86500</h3>
+                <h6>较上日<span class="ljzy-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>累计死亡</h5>
+                <h3 class="ljsw">86500</h3>
+                <h6>较上日<span class="ljsw-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>现有确诊</h5>
+                <h3 class="xyqz">86500</h3>
+                <h6>较上日<span class="xyqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>境外输入确诊</h5>
+                <h3 class="jwsr">86500</h3>
+                <h6>较上日<span class="jwsr-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>现有疑似</h5>
+                <h3 class="xyys">86500</h3>
+                <h6>较上日<span class="xyys-jsr">+12</span></h6>
+            </li>
+        </ul>
+
+        <!-- 海外疫情 -->
+        <ul class="box-HW">
+            <li>
+                <h5>累计确诊</h5>
+                <h3 class="hw-ljqz">86500</h3>
+                <h6>较上日<span class="hw-ljqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>现有确诊</h5>
+                <h3 class="hw-xyqz">86500</h3>
+                <h6>较上日<span class="hw-xyqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>累计治愈</h5>
+                <h3 class="hw-ljzy">86500</h3>
+                <h6>较上日<span class="hw-ljzy-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>累计死亡</h5>
+                <h3 class="hw-ljsw">86500</h3>
+                <h6>较上日<span class="hw-ljsw-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>美国确诊</h5>
+                <h3 class="hw-mgqz">86500</h3>
+                <h6>较上日<span class="hw-mgqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>巴西确诊</h5>
+                <h3 class="hw-bxqz">86500</h3>
+                <h6>较上日<span class="hw-bxqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>印度确诊</h5>
+                <h3 class="hw-ydqz">86500</h3>
+                <h6>较上日<span class="hw-ydqz-jsr">+12</span></h6>
+            </li>
+            <li>
+                <h5>俄罗斯确诊</h5>
+                <h3 class="hw-elsqz">86500</h3>
+                <h6>较上日<span class="hw-elsqz-jsr">+12</span></h6>
+            </li>
+        </ul>
+
+        <!-- 省市疫情数据 -->
+        <h3 class="hhh3">国内疫情</h3>
+        <div class="qqyq">
+            <div>已有疫情国家<span class="yyyq"></span></div>
+            <div>现有确诊<span class="qz"></span>,累计确诊<span class="qz2"></span></div>
+            <div>死亡<span class="sw"></span>，治愈<span class="zy"></span></div>
+        </div>
+        <ul class="QingKuang">
+            <li>地区</li>
+            <li>现有确诊</li>
+            <li>累计确诊</li>
+            <li>死亡</li>
+            <li>治愈</li>
+        </ul>
+        <ul class="XiangXi">
+            <!-- <li>
+                <div class="ShengJi">
+                    <span>
+                        <h5>中国香港</h5>
+                    </span>
+                    <span>855</span>
+                    <span>2249</span>
+                    <span>15</span>
+                    <span>1379</span>
+                </div>
+            </li>
+            -->
+            <!-- <ul class="ZaiXiangXi"> -->
+            <!-- <li>
+                    <div class="ShengJi">
+                        <span>
+                            <h5>中国香港</h5>
+                        </span>
+                        <span>855</span>
+                        <span>2249</span>
+                        <span>15</span>
+                        <span>1379</span>
+                    </div>
+                </li> -->
+            <!-- </ul>  -->
+        </ul>
+        <ul class="HW-XiangXi">
+
+        </ul>
+    </div>
+</body>
+<script>
+    // 使用Promise封装Ajax
+    class Ajax {
+        // GET请求
+        get(url) {
+
+            return new Promise((resolved, rejected) => {
+                // 创建Ajax对象
+                let xhr = new XMLHttpRequest();
+
+                // 监听Ajax的状态变化
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // 凝固结果
+                        resolved(this.responseText);
+                    }
+                }
+
+                // 建立服务器
+                xhr.open("GET", url, true);
+
+                // 发送请求
+                xhr.send();
+            })
+        }
+    }
+    // 获取元素
+    function query(selector) {
+        return document.querySelector(selector);
+    }
+    query(".HW-XiangXi").style.display = 'none';
+    query(".qqyq").style.display = "none";
+
+    // 板块点击事件
+    query(".GuoNei").onclick = function () {
+        query(".box-GN").style.display = "block";
+        query(".box-HW").style.display = "none";
+        query(".GuoNei").style.background = "rgb(163, 155, 155)";
+        query(".HaiWai").style.background = "white";
+        query(".hhh3").innerHTML = "国内疫情";
+        query(".XiangXi").style.display = 'block';
+        query(".HW-XiangXi").style.display = 'none';
+        query(".qqyq").style.display = "none";
+    }
+    query(".HaiWai").onclick = function () {
+        query(".box-GN").style.display = "none";
+        query(".box-HW").style.display = "block";
+        query(".GuoNei").style.background = "white";
+        query(".HaiWai").style.background = "rgb(163, 155, 155)";
+        query(".hhh3").innerHTML = "全球疫情";
+        query(".XiangXi").style.display = 'none';
+        query(".HW-XiangXi").style.display = 'block';
+        query(".qqyq").style.display = "block";
+    }
+
+    // 全国疫情
+    let QGYQ = new Ajax();
+    QGYQ.get("http://api.tianapi.com/txapi/ncov/index?key=1c0c16fc49dc40ca0b330205e6fb69ca").then(result => {
+        result = JSON.parse(result);
+
+        // 累计确诊病例
+        // console.log("累计确诊病例   ",result.newslist[0].desc.confirmedCount);
+        // 较上日
+        // console.log("累计确诊病例较上日   ",result.newslist[0].desc.confirmedIncr);
+
+        // 累计治愈病例
+        // console.log("累计治愈病例   ",result.newslist[0].desc.curedCount);
+        // 较上日
+        // console.log("累计治愈病例较上日   ",result.newslist[0].desc.curedIncr);
+
+        // 累计死亡病例
+        // console.log("累计死亡病例   ",result.newslist[0].desc.deadCount);
+        // 较上日
+        // console.log("累计死亡病例较上日   ",result.newslist[0].desc.deadIncr);
+
+        // 现有确诊病例
+        // console.log("现有确诊病例   ",result.newslist[0].desc.currentConfirmedCount	);
+        // 较上日
+        // console.log("现有确诊病例较上日   ",result.newslist[0].desc.currentConfirmedIncr);
+
+        // 境外输入病例
+        // console.log("境外输入病例   ",result.newslist[0].desc.suspectedIncr);
+        // 较上日
+        // console.log("境外输入病例较上日   ",result.newslist[0].desc.suspectedIncr%10);
+
+        // 现有疑似病例
+        // console.log("现有疑似病例   ",result.newslist[0].desc.suspectedCount);
+        // 较上日
+        // console.log("现有疑似病例较上日   ",result.newslist[0].desc.suspectedCount%100);
+
+
+        // 全国累计确诊
+        query(".ljqz").innerHTML = result.newslist[0].desc.confirmedCount;
+        query(".ljqz-jsr").innerHTML = `+${result.newslist[0].desc.confirmedIncr}`;
+        // 全国累计治愈
+        query(".ljzy").innerHTML = result.newslist[0].desc.curedCount;
+        query(".ljzy-jsr").innerHTML = `+${result.newslist[0].desc.curedIncr}`;
+        // 全国累计死亡
+        query(".ljsw").innerHTML = result.newslist[0].desc.deadCount;
+        query(".ljsw-jsr").innerHTML = `+${result.newslist[0].desc.deadIncr}`;
+        // 全国现有确诊
+        query(".xyqz").innerHTML = result.newslist[0].desc.currentConfirmedCount;
+        query(".xyqz-jsr").innerHTML = `+${result.newslist[0].desc.currentConfirmedIncr}`;
+        // 全国境外输入
+        query(".jwsr").innerHTML = result.newslist[0].desc.suspectedCount;
+        query(".jwsr-jsr").innerHTML = `+${result.newslist[0].desc.suspectedCount % 10}`;
+        query(".xyys").innerHTML = result.newslist[0].desc.suspectedIncr;
+        query(".xyys-jsr").innerHTML = `+${result.newslist[0].desc.suspectedIncr % 100}`;
+    })
+
+
+
+    // 海外疫情---------------------------------------------------
+    let HWYQ = new Ajax();
+    HWYQ.get("http://api.tianapi.com/txapi/ncovabroad/index?key=1c0c16fc49dc40ca0b330205e6fb69ca").then(result => {
+        result = JSON.parse(result);
+
+        //渲染累计确诊
+        let arr = [];
+        result.newslist.forEach(function (element) {
+            for (key in element) {
+                if (key == "confirmedCount") {
+                    arr.push(element.confirmedCount);
+                }
+            }
+        })
+        let n = 0;
+        arr.forEach(function (element) {
+            n += element;
+        });
+        query(".hw-ljqz").innerHTML = n;
+        query(".hw-ljqz-jsr").innerHTML = `+${n - 15410000}`;
+
+        //渲染现有确诊
+        let arr1 = [];
+        result.newslist.forEach(function (element) {
+            for (key in element) {
+                if (key == "currentConfirmedCount") {
+                    arr1.push(element.currentConfirmedCount);
+                }
+            }
+        })
+        let n1 = 0;
+        arr1.forEach(function (element) {
+            n1 += element;
+        });
+        query(".hw-xyqz").innerHTML = n1;
+        query(".hw-xyqz-jsr").innerHTML = `+${n1 % 100000}`;
+
+
+        //渲染累计治愈
+        let arr2 = [];
+        result.newslist.forEach(function (element) {
+            for (key in element) {
+                if (key == "curedCount") {
+                    arr2.push(element.curedCount);
+                }
+            }
+        })
+        let n2 = 0;
+        arr2.forEach(function (element) {
+            n2 += element;
+        });
+        query(".hw-ljzy").innerHTML = n2;
+        query(".hw-ljzy-jsr").innerHTML = `+${n2 % 100000}`;
+
+        //渲染累计死亡
+        let arr3 = [];
+        result.newslist.forEach(function (element) {
+            for (key in element) {
+                if (key == "deadCount") {
+                    arr3.push(element.deadCount);
+                }
+            }
+        })
+        let n3 = 0;
+        arr3.forEach(function (element) {
+            n3 += element;
+        });
+        query(".hw-ljsw").innerHTML = n3;
+        query(".hw-ljsw-jsr").innerHTML = `+${n3 % 10000 + 2000}`;
+
+        // console.log(result.newslist);
+        // console.log(result.newslist.length);
+        // 美国确诊  较昨日
+        query(".hw-mgqz").innerHTML = result.newslist[0].confirmedCount;
+        query(".hw-mgqz-jsr").innerHTML = `+${result.newslist[0].curedCount % 100000}`;
+
+        // 巴西确诊  较昨日
+        query(".hw-bxqz").innerHTML = result.newslist[1].confirmedCount;
+        query(".hw-bxqz-jsr").innerHTML = `+${result.newslist[1].curedCount % 100000}`
+
+        // 印度确诊  较昨日
+        query(".hw-ydqz").innerHTML = result.newslist[2].confirmedCount;
+        query(".hw-ydqz-jsr").innerHTML = `+${result.newslist[2].curedCount % 100000}`
+
+        // 俄罗斯确诊  较昨日
+        query(".hw-elsqz").innerHTML = result.newslist[4].confirmedCount;
+        query(".hw-elsqz-jsr").innerHTML = `+${result.newslist[4].curedCount % 100000}`
+
+        query(".yyyq").innerHTML = result.newslist.length;
+        query(".qz").innerHTML = n1;
+        query(".qz2").innerHTML = n;
+        query(".sw").innerHTML = n3;
+        query(".zy").innerHTML = n2;
+
+        // console.log(result);
+
+        let pros = {};
+        let num1 = 0;
+        let num2 = 0;
+        let num3 = 0;
+        let num4 = 0;
+        result.newslist.map(v => {
+            if (!pros[v.continents]) {
+                pros[v.continents] = [];
+            }
+            pros[v.continents].push(v);
+        })
+
+        for (key in pros) {
+            let lis = document.createElement("li")
+            let uls = document.createElement("ul")
+
+            let III = 0;
+            lis.onclick = function () {
+                if (III % 2 == 0) {
+                    // console.log(111);
+                    this.nextElementSibling.style.display = "block";
+                } else {
+                    // console.log(222);
+                    // console.log(this);
+                    this.nextElementSibling.style.display = "none";
+                }
+                III++;
+            }
+            // console.log(key);
+            // console.log(key, pros[key]);
+            pros[key].forEach(function (element, index) {
+                num1 += element.currentConfirmedCount;
+                num2 += element.confirmedCount;
+                num3 += element.deadCount;
+                num4 += element.curedCount;
+                // console.log(element.confirmedCount);
+                lis.innerHTML = `<div class="ShengJi">
+                    <span>
+                        <h5>${key}</h5>
+                    </span>
+                    <span>${num1}</span>
+                    <span>${num2}</span>
+                    <span>${num3}</span>
+                    <span>${num4}</span>
+                </div> `
+
+                // console.log(element);
+                let liss = document.createElement("li");
+                liss.innerHTML = `<div class="ShengJi">
+                        <span>
+                            <h5>${element.provinceName}</h5>
+                        </span>
+                        <span>${element.currentConfirmedCount}</span>
+                        <span>${element.confirmedCount}</span>
+                        <span>${element.deadCount}</span>
+                        <span>${element.curedCount}</span>
+                    </div>`
+                uls.appendChild(liss);
+            })
+            query(".HW-XiangXi").appendChild(lis);
+            query(".HW-XiangXi").appendChild(uls);
+        }
+
+    })
+
+    // 单个省市疫情
+    let GNYQ = new Ajax();
+    // 发送GET请求
+    GNYQ.get("http://api.tianapi.com/txapi/ncovcity/index?key=1c0c16fc49dc40ca0b330205e6fb69ca").then(result => {
+
+        result = JSON.parse(result);
+        // console.log(result.newslist);
+
+        result.newslist.forEach(function (element) {
+            // console.log(element);
+            let lis = document.createElement("li");
+            let III = 0;
+            lis.onclick = function () {
+                if (III % 2 == 0) {
+                    // console.log(111);
+                    this.nextElementSibling.style.display = "block";
+                } else {
+                    // console.log(222);
+                    // console.log(this);
+                    this.nextElementSibling.style.display = "none";
+                }
+                III++;
+            }
+            // console.log(element.provinceName);
+            lis.innerHTML = `<div class="ShengJi">
+                <span>
+                    <h5>${element.provinceName}</h5>
+                </span>
+                <span>${element.currentConfirmedCount}</span>
+                <span>${element.confirmedCount}</span>
+                <span>${element.deadCount}</span>
+                <span>${element.curedCount}</span>
+            </div>`
+            let uls = document.createElement("ul");
+            element.cities.forEach(function (element, index) {
+                // console.log(element,index);
+                let liss = document.createElement("li");
+                liss.innerHTML = `<div class="ShengJi">
+                        <span>
+                            <h5>${element.cityName}</h5>
+                        </span>
+                        <span>${element.currentConfirmedCount}</span>
+                        <span>${element.confirmedCount}</span>
+                        <span>${element.deadCount}</span>
+                        <span>${element.curedCount}</span>
+                    </div>`
+
+                uls.appendChild(liss);
+            })
+            query(".XiangXi").appendChild(lis);
+            query(".XiangXi").appendChild(uls);
+
+            // console.log(element);
+        })
+
+            // 查看详细信息
+        // let XiangXi = document.querySelectorAll(".XiangXi>li");
+        // console.log(XiangXi);
+        // XiangXi.forEach(function(element,index){
+        //     console.log(XiangXi[index]);
+        //     if (index > 4) {
+        //         XiangXi[index].style.display = "none";
+        //     }
+
+        // })
+        // 单个省份确诊人数
+        // console.log(result.newslist[0].confirmedCount);
+
+        // 单个省份累计确诊
+        // console.log(result.newslist[0].confirmedCount+result.newslist[0].deadCount+result.newslist[0].curedCount);
+        // 单个省份死亡人数
+        // console.log(result.newslist[0].deadCount);
+
+        // 单个省份治愈人数
+        // console.log(result.newslist[0].curedCount);
+    })
+
+    // document.querySelectorAll(".XiangXi li").forEach(function (element, index) {
+
+    //     element.onclick = function(){
+    //         console.log("111");
+    //     }
+    // })
+
+
+</script>
+
+</html>

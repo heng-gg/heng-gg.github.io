@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端上传图片</title>
+    <style>
+        body{
+            background: slategray;
+        }
+        .file-box {
+            height: 160px;
+            width: 160px;
+            border: 2px dashed red;
+            margin: 100px auto 0;
+            line-height: 160px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        .label-box {
+            display: block;
+            height: 100%;
+        }
+
+        .file {
+            display: none;
+        }
+
+        .auto-img {
+            display: block;
+            width: 100%;
+        }
+
+        .img-box {
+            width: 650px;
+            padding: 10px 10px 0;
+            border: 1px solid #aaa;
+            margin: 20px auto 0;
+        }
+
+        .img-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .img-item {
+            float: left;
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .del {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-bottom-left-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+        }
+
+        .img-item::nth-child(5n) {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="file-box">
+        <label class="label-box">
+            <input type="file" class="file" multiple />
+            <span>上传图片</span>
+        </label>
+    </div>
+    <div class="img-box">
+
+    </div>
+</body>
+<script>
+    (function (win, doc) {
+
+        win.onload = function () {
+
+            // 获取元素
+            function query(selector) {
+                return document.querySelectorAll(selector);
+            }
+
+            // 创建元素
+            function create(tagName) {
+                return doc.createElement(tagName);
+            }
+
+            // 上传文件的类型
+            let types = ["jpeg", "jpg", "png", "gif"];
+
+            // 设置上传的图片的大小
+            let size = 5000 * 1024;
+
+            // 获取上传文件元素
+            let fileInput = query(".file")[0];
+            fileInput.onchange = function () {
+
+                // 创建文档片段
+                let fragment = doc.createDocumentFragment();
+
+                let files = this.files;
+
+                let length = files.length;
+
+                // 记录已经读取完毕的图片数量
+                let count = 0;
+
+                for (let i = 0; i < files.length; i++) {
+
+                    // 验证文件类型
+                    if (types.indexOf(files[i].type.split('/')[1]) === -1 || files[i].size > size){
+
+                        length--;
+                        // 跳过本次循环  进入下一次循环
+                        continue;
+                    }
+
+                    // 创建文档阅读对象
+                    let fileReader = new FileReader();
+
+                    // 监听文件是否读取完毕
+                    fileReader.onload = function () {
+                        count++;
+                        let base64 = this.result;
+
+                        // 创建节点
+                        let itemImg = create("div");
+                        itemImg.className = "img-item";
+
+                        let html = `<div>
+                            <img class="auto-img" src="${base64}" alt="">
+                            <div class="del">X</div>
+                            </div>`;
+
+                        itemImg.innerHTML = html;
+
+                        // 获取IMG
+                        let img = itemImg.querySelector(".auto-img");
+
+                        fragment.appendChild(itemImg);
+
+                        let del = itemImg.querySelector(".del");
+                        del.onclick = function () {
+                            itemImg.remove();
+                        }
+
+                        if (count == length) {
+                            query(".img-box")[0].appendChild(fragment);
+
+                            // 监听所有图片 都加载完成
+                            let imgs = query(".auto-img");
+
+                            for (let i = 0; i < imgs.length; i++) {
+                                imgs[i].onload = function () {
+                                    let naturalWidth = this.naturalWidth;
+                                    let naturalHeight = this.naturalHeight;
+
+                                    if (naturalWidth != naturalHeight) {
+                                        this.parentNode.pparentNode.remove();
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    // 读取数据
+                    fileReader.readAsDataURL(files[i]);
+
+                }
+            }
+        }
+
+    })(window, document);
+</script>
+
+</html>

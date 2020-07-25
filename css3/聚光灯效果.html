@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚光灯案例</title>
+    <style>
+        h2{
+            text-align: center;
+            font-size:6rem;
+            background:url("4.jpg") center center no-repeat;
+            background-size:cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color:transparent;
+            background-size:cover;
+            position:absolute;
+            top:0px;
+            
+        }
+        body {
+            background: #222;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:10px;
+            flex-direction: column;
+
+        }
+        h1 {
+           
+            color: #333;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-size:8rem;
+            letter-spacing: 15px;
+        }
+        h1::after {
+            content: attr(data-zhufeng);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: transparent;
+            background:-webkit-linear-gradient(left,#c23616,#192a56,#00d2d3,yellow,#6D214F,#2e86de,#4cd137,#e84118);
+             background-size: cover;
+            -webkit-background-size: cover;
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* 绘制一个小圆 */
+            -webkit-clip-path: circle(100px at 0% 50%);
+            clip-path: circle(100px at 0% 50%);
+            animation: light 5s infinite; 
+
+        }
+
+        @keyframes light {
+            0% {
+                -webkit-clip-path: circle(100px at 0% 50%);
+                clip-path: circle(100px at 0% 50%);
+            }
+            50%{
+                -webkit-clip-path: circle(100px at 100% 50%);
+                clip-path: circle(100px at 100% 50%);
+            }
+            100%{
+                -webkit-clip-path: circle(100px at 0% 50%);
+                clip-path: circle(100px at 0% 50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>聚光灯</h2>
+    <h1 data-zhufeng="SPOTLIGHT">SPOTLIGHT</h1>
+</body>
+
+</html>

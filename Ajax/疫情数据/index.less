@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    margin-top: 10px;
+    display: flex;
+    // background: rgb(231, 235, 231);
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    border: 2px solid rgb(114, 221, 240);
+    border-radius: 10px;
+    overflow: hidden;
+    .GuoNei {
+        width: 50%;
+        height: 60px;
+        // 切换点击高亮效果
+        background: rgb(163, 155, 155);   
+        // background: white;
+
+        text-align: center;
+        line-height: 60px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .HaiWai {
+        width: 50%;
+        height: 60px;
+        // 切换点击高亮效果
+        background: white;
+        // background: rgb(163, 155, 155);
+
+        text-align: center;
+        line-height: 60px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    
+    .box-GN{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        // 点击后隐藏
+        // display: none;
+        li{
+            margin-top: 20px;
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            border-right: 2px solid rgb(134, 130, 130);
+            h3{
+                color: red;
+            }
+            h6{
+                color: rgb(100, 100, 100);
+                span{
+                    color: red;
+                }
+            }
+        }
+        li:nth-child(2){
+            h3{
+                color: rgb(18, 236, 102);
+            }
+            h6{
+                span{
+                    color: rgb(18, 236, 102);
+                }
+            }
+        }
+        li:nth-child(3){
+            h3{
+                color: rgb(105, 103, 100);
+            }
+            h6{
+                span{
+                    color: rgb(105, 103, 100);
+                }
+            }
+        }
+        li:nth-child(4){
+            h3{
+                color: sandybrown;
+            }
+            h6{
+                span{
+                    color: sandybrown;
+                }
+            }
+        }
+        li:nth-child(5){
+            h3{
+                color: rgb(72, 156, 252);
+
+            }
+            h6{
+                span{
+                    color: rgb(72, 156, 252);
+
+                }
+            }
+        }
+        li:nth-child(6){
+            h3{
+                color: rgb(250, 103, 58);
+            }
+            h6{
+                span{
+                    color: rgb(250, 103, 58);
+                }
+            }
+        }
+        li:nth-child(3n){
+            border-right: none;
+        }
+    }
+    .box-HW{
+        width: 98%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        // 点击后隐藏
+        display: none;
+        li{
+            margin-top: 20px;
+            display: inline-block;
+            width: 23%;
+            text-align: center;
+            border-right: 2px solid rgb(134, 130, 130);
+            h3{
+                color: rgb(201, 91, 91);
+                font-size: 16px;
+
+            }
+            h6{
+                color: rgb(100, 100, 100);
+                font-size: 6px;
+                span{
+                    font-size: 2px;
+                    color: rgb(138, 136, 132);
+                }
+            }
+        }
+        li:nth-child(1){
+            h6{
+                span{
+                    color: rgb(172, 65, 79);
+                }
+            }
+        }
+        li:nth-child(2){
+            h3{
+                color: rgb(255, 142, 43);
+            }
+            h6{
+                span{
+                    color: rgb(255, 142, 43);
+                }
+            }
+        }
+        li:nth-child(3){
+            h3{
+                color: rgb(14, 221, 31);
+            }
+            h6{
+                span{
+                    color: rgb(14, 221, 31);
+                }
+            }
+        }
+        li:nth-child(4){
+            h3{
+                color: rgb(110, 111, 112);
+            }
+            h6{
+                span{
+                    color: rgb(110, 111, 112);
+                }
+            }
+        }
+        li:nth-child(4n){
+            border-right: none;
+        }
+    }
+    .hhh3{
+        border-top: 2px solid rgb(89, 208, 245); 
+        margin-bottom: 5px;
+        width: 100%;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    .qqyq{
+        width: 100%;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgb(144, 146, 144);
+        span{
+            color: rgb(59, 66, 59);
+        }
+    }
+    .QingKuang{
+        width: 90%;
+        li{
+            text-align: center;
+            font-size: 8px;
+            font-weight: 700;
+            width: 18%;
+            display: inline-block;
+
+        }
+        li:nth-child(2){
+            color: lightsalmon;
+        }
+        li:nth-child(3){
+            color: rgb(240, 189, 49);
+        }
+        li:nth-child(4){
+            color: rgb(110, 108, 110);
+        }
+        li:nth-child(5){
+            color: rgb(12, 158, 31);
+        }
+    }
+    .XiangXi{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        li{
+            width: 100%;
+            display: inline-block;
+            .ShengJi{
+                margin-top: 3px;
+                height: 30px;
+                width: 100%;
+                background: rgb(168, 165, 165);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span{
+                    h5{
+                        font-size: 14px;
+                    }
+                    width: 18%;
+                    margin-left: 8px;
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        ul{
+            display: none;
+            width: 100%;
+            .ShengJi{
+                background: rgb(250, 247, 247);
+            }
+        }
+    }
+    .HW-XiangXi{
+        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        li{
+            width: 100%;
+            display: inline-block;
+            .ShengJi{
+                margin-top: 3px;
+                height: 30px;
+                width: 100%;
+                background: rgb(168, 165, 165);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span{
+                    h5{
+                        font-size: 14px;
+                    }
+                    width: 18%;
+                    margin-left: 8px;
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        ul{
+            display: none;
+            width: 100%;
+            .ShengJi{
+                background: rgb(250, 247, 247);
+            }
+        }
+    }
+}
+
+
+

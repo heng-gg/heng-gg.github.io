@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动验证</title>
+    <style>
+        body{
+            background: slategray;
+        }
+        .box {
+            width: 470px;
+            border: 2px solid red;
+            margin: 0 auto;
+            /* position: relative; */
+        }
+
+        .auto-img {
+            /* position: absolute; */
+            width: 100%;
+            display: block;
+        }
+
+        .slide {
+            height: 40px;
+            position: relative;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            color:white;
+            font-size: 32px;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgb(52, 191, 247);
+            z-index: 1;
+        }
+
+        .box-img {
+            position: relative;
+            /* width: 100%; */
+        }
+
+        .img-block {
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            width: 80px;
+            height: 80px;
+            z-index: 4;
+            background-image: url("./images/02.png");
+            background-repeat: no-repeat;
+        }
+
+        .white-block {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(233, 224, 224, 0.8);
+            z-index: 3;
+        }
+
+        .layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-img">
+            <img class="aotu-img" src="./images/02.png"></img>
+            <span class="img-block"></span>
+            <span class="white-block"></span>
+        </div>
+        <div class="slide">
+            <!-- 滑块 -->
+            <div class="mask">→</div>
+            <!-- 遮罩层 -->
+            <div class="layer"></div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+
+        function query(selector) {
+            return document.querySelector(selector);
+        }
+
+        let boxImg = query(".box-img");
+        let boxImgWidth = boxImg.clientWidth;
+        let boxImgHeight = boxImg.clientHeight;
+
+        let imgBlock = query(".img-block");
+        let imgBlockWidth = imgBlock.clientWidth;
+        let imgBlockHeight = imgBlock.clientHeight;
+
+        let whiteBLOCK = query(".white-block");
+
+        let whiteBLOCKMinLeft = boxImgWidth / 2;
+        let whiteBLOCKMaxLeft = boxImgWidth - imgBlockWidth;
+
+        let whiteBLOCKMinTop = 0;
+        let whiteBLOCKMaxTop = boxImgHeight - imgBlockHeight;
+
+        // 随机生成空白白块的top 和left
+
+        let randomLeft = Math.ceil(Math.random() * (whiteBLOCKMaxLeft - whiteBLOCKMinLeft + 1) + whiteBLOCKMinLeft);
+        let randomTop = Math.ceil(Math.random() * (whiteBLOCKMaxTop - whiteBLOCKMinTop + 1) + whiteBLOCKMinTop);
+
+        // 设置白块的随机坐标
+        whiteBLOCK.style.left = randomLeft + "px";
+        whiteBLOCK.style.top = randomTop + "px";
+
+        // 随机生成图片快的left
+        let imgBlockMinLeft = 0;
+
+        let imgBlockMaxLeft = boxImgWidth / 2 - imgBlockWidth;
+
+        let imgBlockRandomLeft = Math.ceil(Math.random() * (imgBlockMaxLeft - imgBlockMinLeft + 1) + imgBlockMinLeft);
+
+        // 设置图片快的坐标
+        imgBlock.style.left = imgBlockRandomLeft + "px";
+        imgBlock.style.top = randomTop + "px";
+
+        imgBlock.style.backgroundPosition = -randomLeft + "px -" + randomTop + "px";
+
+        // 获取mask元素
+        let mask = query(".mask");
+        mask.style.left = imgBlockRandomLeft + "px";
+
+        let maskWidth = mask.clientWidth;
+
+        let layer = query(".layer");
+
+        let slideWidth = query(".slide").clientWidth;
+
+        let x0 = 0;
+
+        mask.onmousedown = function (e) {
+            layer.style.display = "block";
+
+            x0 = e.offsetX;
+        }
+
+        layer.onmousemove = function (e) {
+            let minLeft = 0;
+            let maxLeft = slideWidth - maskWidth;
+
+            let left = e.offsetX - x0;
+
+            left = left >= maxLeft ? maxLeft : left <= minLeft ? minLeft : left;
+
+            mask.style.left = left + "px";
+            imgBlock.style.left = left + "px";
+        }
+
+        layer.onmouseup = function () {
+
+            let left = parseFloat(getComputedStyle(mask).left);
+
+            let l = Math.abs(left - randomLeft);
+
+            if (l <= 5) {
+                alert("成功");
+                imgBlock.style.left = randomLeft + "px";
+                mask.style.left = randomLeft + "px";
+            } else {
+                alert("失败")
+            }
+
+            this.onmousemove = null;
+            this.style.display = "none";
+        }
+    }
+
+</script>
+
+</html>

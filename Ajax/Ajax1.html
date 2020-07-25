@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装Ajax</title>
+</head>
+    <style>
+        body{
+            background: lightslategray;
+            display: flex;
+            justify-content: center;
+        }
+        h3{
+            color: lightsalmon;
+        }
+        div{
+            width: 500px;
+            color: lime;
+            font-size: 18px;
+        }
+    </style>
+<body>
+    <div>
+        <H3>今日份的舔狗日记</H3>
+        <div class="TianDog">
+    
+        </div>
+        <h3>今日份的彩虹屁</h3>
+        <div class="CaiHongPi">
+    
+        </div>
+        <h3>今日份的土味情话</h3>
+        <div class="TuWeiQingHua">
+    
+        </div>
+        
+    </div>
+</body>
+<script>
+    // 使用Promise封装Ajax
+    class Ajax {
+        // GET请求
+        get(url) {
+
+            return new Promise((resolved, rejected) => {
+                // 创建Ajax对象
+                let xhr = new XMLHttpRequest();
+
+                // 监听Ajax的状态变化
+                xhr.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                        // 凝固结果
+                        resolved(this.responseText);
+                    }
+                }
+
+                // 建立服务器
+                xhr.open("GET",url,true);
+
+                // 发送请求
+                xhr.send();
+            })
+        }
+    }
+
+    let http = new Ajax();
+
+    // 发送GET请求
+    http.get("http://api.tianapi.com/txapi/tiangou/index?key=f8077fa6e14a463ab55e510b8844368e").then(result =>{
+
+        result = JSON.parse(result);
+        console.log(result.newslist);
+        document.querySelector(".TianDog").innerHTML = result.newslist[0].content;
+    })
+
+console.log('=============================================');
+    let ajax = new Ajax();
+    ajax.get("http://api.tianapi.com/txapi/caihongpi/index?key=f8077fa6e14a463ab55e510b8844368e").then(result =>{
+
+        result = JSON.parse(result);
+        console.log(result.newslist);
+        document.querySelector(".CaiHongPi").innerHTML = result.newslist[0].content;
+
+    })
+
+    let ajax1 = new Ajax();
+    ajax1.get("http://api.tianapi.com/txapi/saylove/index?key=f8077fa6e14a463ab55e510b8844368e").then(result =>{
+
+        result = JSON.parse(result);
+        console.log(result.newslist);
+        document.querySelector(".TuWeiQingHua").innerHTML = result.newslist[0].content;
+
+    })
+</script>
+
+</html>

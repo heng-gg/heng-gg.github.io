@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  position: relative;
+  border: 2px solid #72ddf0;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  overflow: hidden;
+}
+.box .GuoNei {
+  width: 50%;
+  height: 60px;
+  background: #a39b9b;
+  text-align: center;
+  line-height: 60px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.box .HaiWai {
+  width: 50%;
+  height: 60px;
+  background: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.box .box-GN {
+  width: 90%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.box .box-GN li {
+  margin-top: 20px;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  border-right: 2px solid #868282;
+}
+.box .box-GN li h3 {
+  color: red;
+}
+.box .box-GN li h6 {
+  color: #646464;
+}
+.box .box-GN li h6 span {
+  color: red;
+}
+.box .box-GN li:nth-child(2) h3 {
+  color: #12ec66;
+}
+.box .box-GN li:nth-child(2) h6 span {
+  color: #12ec66;
+}
+.box .box-GN li:nth-child(3) h3 {
+  color: #696764;
+}
+.box .box-GN li:nth-child(3) h6 span {
+  color: #696764;
+}
+.box .box-GN li:nth-child(4) h3 {
+  color: sandybrown;
+}
+.box .box-GN li:nth-child(4) h6 span {
+  color: sandybrown;
+}
+.box .box-GN li:nth-child(5) h3 {
+  color: #489cfc;
+}
+.box .box-GN li:nth-child(5) h6 span {
+  color: #489cfc;
+}
+.box .box-GN li:nth-child(6) h3 {
+  color: #fa673a;
+}
+.box .box-GN li:nth-child(6) h6 span {
+  color: #fa673a;
+}
+.box .box-GN li:nth-child(3n) {
+  border-right: none;
+}
+.box .box-HW {
+  width: 98%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: none;
+}
+.box .box-HW li {
+  margin-top: 20px;
+  display: inline-block;
+  width: 23%;
+  text-align: center;
+  border-right: 2px solid #868282;
+}
+.box .box-HW li h3 {
+  color: #c95b5b;
+  font-size: 16px;
+}
+.box .box-HW li h6 {
+  color: #646464;
+  font-size: 6px;
+}
+.box .box-HW li h6 span {
+  font-size: 2px;
+  color: #8a8884;
+}
+.box .box-HW li:nth-child(1) h6 span {
+  color: #ac414f;
+}
+.box .box-HW li:nth-child(2) h3 {
+  color: #ff8e2b;
+}
+.box .box-HW li:nth-child(2) h6 span {
+  color: #ff8e2b;
+}
+.box .box-HW li:nth-child(3) h3 {
+  color: #0edd1f;
+}
+.box .box-HW li:nth-child(3) h6 span {
+  color: #0edd1f;
+}
+.box .box-HW li:nth-child(4) h3 {
+  color: #6e6f70;
+}
+.box .box-HW li:nth-child(4) h6 span {
+  color: #6e6f70;
+}
+.box .box-HW li:nth-child(4n) {
+  border-right: none;
+}
+.box .hhh3 {
+  border-top: 2px solid #59d0f5;
+  margin-bottom: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.box .qqyq {
+  width: 100%;
+  padding-left: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #909290;
+}
+.box .qqyq span {
+  color: #3b423b;
+}
+.box .QingKuang {
+  width: 90%;
+}
+.box .QingKuang li {
+  text-align: center;
+  font-size: 8px;
+  font-weight: 700;
+  width: 18%;
+  display: inline-block;
+}
+.box .QingKuang li:nth-child(2) {
+  color: lightsalmon;
+}
+.box .QingKuang li:nth-child(3) {
+  color: #f0bd31;
+}
+.box .QingKuang li:nth-child(4) {
+  color: #6e6c6e;
+}
+.box .QingKuang li:nth-child(5) {
+  color: #0c9e1f;
+}
+.box .XiangXi {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 90%;
+}
+.box .XiangXi li {
+  width: 100%;
+  display: inline-block;
+}
+.box .XiangXi li .ShengJi {
+  margin-top: 3px;
+  height: 30px;
+  width: 100%;
+  background: #a8a5a5;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.box .XiangXi li .ShengJi span {
+  width: 18%;
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.box .XiangXi li .ShengJi span h5 {
+  font-size: 14px;
+}
+.box .XiangXi ul {
+  display: none;
+  width: 100%;
+}
+.box .XiangXi ul .ShengJi {
+  background: #faf7f7;
+}
+.box .HW-XiangXi {
+  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 90%;
+}
+.box .HW-XiangXi li {
+  width: 100%;
+  display: inline-block;
+}
+.box .HW-XiangXi li .ShengJi {
+  margin-top: 3px;
+  height: 30px;
+  width: 100%;
+  background: #a8a5a5;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.box .HW-XiangXi li .ShengJi span {
+  width: 18%;
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.box .HW-XiangXi li .ShengJi span h5 {
+  font-size: 14px;
+}
+.box .HW-XiangXi ul {
+  display: none;
+  width: 100%;
+}
+.box .HW-XiangXi ul .ShengJi {
+  background: #faf7f7;
+}
+/*# sourceMappingURL=./index.css.map */
