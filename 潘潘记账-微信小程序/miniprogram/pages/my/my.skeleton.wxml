@@ -1,0 +1,41 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午7:05:49 
+使用方法：
+在 pages\my\my.wxml 引入模板
+
+```
+<import src="my.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\my\my.wxss 中引入样式
+```
+@import "./my.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="my">
+      <view class="my-bg">
+        <view class="auth-btn sk-transparent sk-text-32-5000-685 sk-text" data-pageurl="../auth/auth" style="border: none; background-position-x: 50%;">
+          授权认证
+        </view>
+      </view>
+      <view class="list">
+        <view is="components/wxcell/wxcell" data-pageurl="../mybooking/mybooking">
+          <view class="wxcell--wx-cell">
+            <view class="wxcell--wx-cell-title sk-transparent sk-text-36-0000-59 sk-text">
+              我的记账
+            </view>
+            <view class="wxcell--wx-cell-arrow">
+              <image class="wxcell--wx-cell-arrow-icon sk-image" mode="widthFix" style="height: 16px;">
+              </image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

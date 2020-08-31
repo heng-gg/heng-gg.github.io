@@ -1,0 +1,28 @@
+<import src="mybooking.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{isLoading}}" />
+<view wx:else>
+  <view class="list">
+      <view class="list-item clearfix" wx:for="{{myBookingData}}" wx:key="index">
+        <view class="fl img-box">
+          <image class="auto-img img-icon" src="{{item.bookingStyle.url}}" mode="widthFix"></image>
+        </view>
+        <view class="fl list-text">
+          <view class="fl">
+            <view class="clearfix title-info {{item.comment == '' ? 'not-comment' : ''}}">
+              <view class="fl type-title">{{item.bookingStyle.title}}</view>
+              <view class="fl account">{{item.account}}</view>
+              <view class="fl account">{{item.date}}</view>
+            </view>
+            <view class="comment" wx:if="{{item.comment != ''}}">{{item.comment}}</view>
+          </view>
+          <view class="fr clearfix">
+            <view class="fl price p-{{item.bookingType.type}}">￥{{item.money}}</view>
+            <view class="fl remove-box" data-id="{{item._id}}" data-index="{{index}}" bindtap="removeMyBookingData">
+              <image class="auto-img remove-box-img" src="../../images/delete.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+</view>

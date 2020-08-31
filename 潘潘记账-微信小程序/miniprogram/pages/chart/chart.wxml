@@ -1,0 +1,50 @@
+<import src="chart.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{isLoading}}" />
+<view class="chart-box" wx:else>
+  <view class="chart-nav clearfix">
+    <view class="fl search-box">
+      <picker bindchange="selectDate" class="picker-box" mode="date" start="{{dateRange.start}}" end="dateRange.end">{{dateText}}</picker>
+    </view>
+    <view class="fl condition" bindtap="toggleTime">按{{text}}查询</view>
+  </view>
+  <view class="clearfix tabs">
+
+    <view class="fl tab-item" wx:for="{{bookingTitle}}" wx:key="index" data-index="{{index}}" data-active="{{item.isActive}}" bindtap="toggleBookingTitle">
+      <view class="tab-item-content {{item.isActive ? 'active' : ''}}">
+        <view class="tab-title">{{text}}{{item.title}}</view>
+        <view class="tab-price tab-title {{item.type}}">￥{{item.total}}</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="canvas-box" hidden="{{bookingData.length == 0}}">
+     <canvas canvas-id="pieCanvas" class="canvas-box"></canvas>
+  </view>
+
+  <view class="type-box">
+
+    <view class="type-item clearfix" wx:for="{{bookingData}}" wx:key="index" data-ids="{{item._ids}}" data-title="{{item.title}}" bindtap="goDetail">
+      <view class="fl img-icon">
+        <image class="auto-img icon-box" src="{{item.url}}" mode="widthFix"></image>
+      </view>
+      <view class="fl type-content">
+        <view class="type-text">
+          <view class="fl t-title">{{item.title}}</view>
+          <view class="fr t-price t-price-{{item.type}}">￥{{item.total}}</view>
+        </view>
+        <view class="type-progress">
+          <view class="fl progress">
+            <view class="progress-active" style="background-color: {{item.color}};width: {{item.percent * 100 + '%'}};"></view>
+          </view>
+          <view class="fl count">{{item.count}}笔</view>
+        </view>
+      </view>
+      <view class="fl arrow">
+        <image class="auto-img arrow-img" src="../../images/right-arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+
+</view>

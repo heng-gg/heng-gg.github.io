@@ -1,0 +1,201 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午4:46:33 
+使用方法：
+在 pages\booking\booking.wxml 引入模板
+
+```
+<import src="booking.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\booking\booking.wxss 中引入样式
+```
+@import "./booking.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="booking">
+      <view class="booking-bg">
+      </view>
+      <view class="booking-box">
+        <view class="type-box">
+          <view class="type-title" style="border: none;">
+            <view class="type-title-item active sk-transparent sk-text-26-6667-265 sk-text" data-active="true" data-index="0" data-name="typeData" style="background-position-x: 50%;">
+              收入
+            </view>
+            <view class="type-title-item sk-transparent sk-text-26-6667-568 sk-text" data-active="false" data-index="1" data-name="typeData" style="background-position-x: 50%;">
+              支出
+            </view>
+          </view>
+          <view class="type-icons clearfix sk-pseudo sk-pseudo-circle">
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="0" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-185 sk-text" style="background-position-x: 50%;">
+                  餐饮
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="1" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-789 sk-text" style="background-position-x: 50%;">
+                  购物
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="2" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-659 sk-text" style="background-position-x: 50%;">
+                  出行
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="3" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-280 sk-text" style="background-position-x: 50%;">
+                  健康
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="4" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-926 sk-text" style="background-position-x: 50%;">
+                  娱乐
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="5" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-814 sk-text" style="background-position-x: 50%;">
+                  住房
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="6" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-47 sk-text" style="background-position-x: 50%;">
+                  人情
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="7" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-168 sk-text" style="background-position-x: 50%;">
+                  交通
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="8" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-485 sk-text" style="background-position-x: 50%;">
+                  学习
+                </view>
+              </view>
+            </view>
+            <view class="type-icon-item fl">
+              <view class="icon-box" data-active="false" data-index="9" data-name="iconsData">
+                <view>
+                  <image class="auto-img icon-img sk-image" mode="widthFix" style="height: 40px;">
+                  </image>
+                </view>
+                <view class="icon-title sk-transparent sk-text-14-2857-354 sk-text" style="background-position-x: 50%;">
+                  其他
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="account-box">
+          <view class="account-title sk-transparent sk-text-14-2857-909 sk-text" style="border: none;">
+            账户选择
+          </view>
+          <view class="account-type">
+            <view class="account-item active sk-transparent sk-text-26-0000-775 sk-text" data-active="true" data-index="0" data-name="accountData" style="background-position-x: 50%;">
+              现金
+            </view>
+            <view class="account-item sk-transparent sk-text-26-0000-690 sk-text" data-active="false" data-index="1" data-name="accountData" style="background-position-x: 50%;">
+              支付宝
+            </view>
+            <view class="account-item sk-transparent sk-text-26-0000-268 sk-text" data-active="false" data-index="2" data-name="accountData" style="background-position-x: 50%;">
+              微信
+            </view>
+            <view class="account-item sk-transparent sk-text-26-0000-95 sk-text" data-active="false" data-index="3" data-name="accountData" style="background-position-x: 50%;">
+              储蓄卡
+            </view>
+            <view class="account-item sk-transparent sk-text-26-0000-187 sk-text" data-active="false" data-index="4" data-name="accountData" style="background-position-x: 50%;">
+              信用卡
+            </view>
+          </view>
+        </view>
+        <view class="booking-info">
+          <view class="clearfix sk-pseudo sk-pseudo-circle">
+            <view class="fl b-title sk-transparent sk-text-32-5000-764 sk-text">
+              日期
+            </view>
+            <view class="fl b-content">
+              <view class="picker-box sk-transparent sk-text-32-5000-455 sk-text sk-image" data-name="date" end="2020-08-31 16:46:16" mode="date" start="2017-01-01">
+                请选择日期
+              </view>
+            </view>
+          </view>
+          <view class="clearfix sk-pseudo sk-pseudo-circle">
+            <view class="fl b-title sk-transparent sk-text-32-5000-237 sk-text">
+              金额
+            </view>
+            <view class="fl b-content">
+              <view class="money sk-image" data-name="money" placeholder="输入金额" type="digit">
+              </view>
+            </view>
+          </view>
+          <view class="clearfix sk-pseudo sk-pseudo-circle">
+            <view class="fl b-title sk-transparent sk-text-32-5000-42 sk-text">
+              备注
+            </view>
+            <view class="fl b-content">
+              <view class="money sk-image" data-name="comment" maxlength="20" placeholder="输入备注内容" type="text">
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

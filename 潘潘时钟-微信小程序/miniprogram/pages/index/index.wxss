@@ -1,0 +1,103 @@
+
+.slider{
+  width: 85%;
+  margin: 80rpx auto;
+}
+.index-text{
+  text-align: center;
+  margin: 40rpx;
+}
+.texe-title{
+  width: 100%;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #222;
+}
+.texe-deco{
+  padding-top: 20rpx;
+  font-weight: bold;
+  width: 100%;
+  color: #999;
+}
+.index-event{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.event-data{
+  width: 30%;
+  height: 140rpx;
+  margin: 40rpx auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+.event-data.active{
+  color: #E7624F;
+  transform: scale(1.2);
+}
+.data-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.img{
+  width: 100%;
+  height: 100rpx;
+}
+.data-title{
+  width: 100%;
+}
+.index-btn{
+  margin: 60rpx auto;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  width: 300rpx;
+  height:100rpx;
+  border: 4rpx solid #E7624F;
+  border-radius: 40rpx;
+}
+/* 分页的样式 */
+.indexFu{
+  overflow: hidden;
+  background-color: #E7624F;
+}
+.progress{
+  width: 400rpx;
+  height: 400rpx;
+  margin: 140rpx auto;
+  position: relative;
+}
+.progress .progress_bg,.progress .progress_active{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400rpx;
+  height: 400rpx;
+}
+.progress .progress_time{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 70rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 120rpx;
+  top: 170rpx;
+}
+.btn-return,.btn-pause,.btn-contine,.btn-giveUp{
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  border: 4rpx solid #fff;
+  border-radius: 40rpx;
+  margin: 0 auto 20rpx auto;
+}

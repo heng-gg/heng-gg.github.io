@@ -1,0 +1,40 @@
+@import "./my.skeleton.wxss";
+.my-bg{
+  padding: 80rpx 0;
+  background-color: #FEDB5B;
+}
+
+.img-box{
+  width: 200rpx;
+  margin: 0 auto;
+}
+
+.my-img{
+  height: 200rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10rpx rgba(255, 255, 255, .35);
+  overflow: hidden;
+}
+
+.my-img-box{
+  height: 200rpx;
+}
+
+.nickname{
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #444;
+}
+
+.auth-btn{
+  width: 320rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #444;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border: 4rpx solid #EAB93F;
+}

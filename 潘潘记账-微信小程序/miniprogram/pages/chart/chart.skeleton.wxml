@@ -1,0 +1,121 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午4:50:11 
+使用方法：
+在 pages\chart\chart.wxml 引入模板
+
+```
+<import src="chart.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\chart\chart.wxss 中引入样式
+```
+@import "./chart.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="chart-box">
+      <view class="chart-nav clearfix sk-pseudo sk-pseudo-circle">
+        <view class="fl search-box">
+          <view class="picker-box sk-transparent sk-text-26-6667-841 sk-text sk-image" end="dateRange.end" mode="date" start="2017-01-01">
+            2020-08
+          </view>
+        </view>
+        <view class="fl condition sk-transparent sk-text-26-6667-976 sk-text" style="background-position-x: 50%;">
+          按月查询
+        </view>
+      </view>
+      <view class="clearfix tabs sk-pseudo sk-pseudo-circle">
+        <view class="fl tab-item" data-active="true" data-index="0">
+          <view class="tab-item-content active">
+            <view class="tab-title sk-transparent sk-text-14-2857-68 sk-text" style="background-position-x: 50%;">
+              月收入
+            </view>
+            <view class="tab-price tab-title shouru sk-transparent sk-text-14-2857-484 sk-text" style="background-position-x: 50%;">
+              ￥5,698.00
+            </view>
+          </view>
+        </view>
+        <view class="fl tab-item" data-active="false" data-index="1">
+          <view class="tab-item-content">
+            <view class="tab-title sk-transparent sk-text-14-2857-977 sk-text" style="background-position-x: 50%;">
+              月支出
+            </view>
+            <view class="tab-price tab-title zhichu sk-transparent sk-text-14-2857-934 sk-text" style="background-position-x: 50%;">
+              ￥2,861.00
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="canvas-box">
+        <view canvas-id="pieCanvas" class="canvas-box sk-image">
+        </view>
+      </view>
+      <view class="type-box">
+        <view class="type-item clearfix sk-pseudo sk-pseudo-circle" data-ids="7498b5fe5f44c715004d199f7baa0fd3-65825b355f49c575007c18187fa6daef-60173c665f4cabc9009e4f51034593ec" data-title="娱乐" style="border: none;">
+          <view class="fl img-icon">
+            <image class="auto-img icon-box sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl type-content">
+            <view class="type-text">
+              <view class="fl t-title sk-transparent sk-text-15-0000-141 sk-text">
+                娱乐
+              </view>
+              <view class="fr t-price t-price-shouru sk-transparent sk-text-15-0000-837 sk-text">
+                ￥698.00
+              </view>
+            </view>
+            <view class="type-progress">
+              <view class="fl progress">
+                <view class="progress-active" style="background-color: rgb(106,134,196);width: 12.24991224991225%;">
+                </view>
+              </view>
+              <view class="fl count sk-transparent sk-text-20-0000-206 sk-text" style="background-position-x: 100%;">
+                3笔
+              </view>
+            </view>
+          </view>
+          <view class="fl arrow">
+            <image class="auto-img arrow-img sk-image" mode="widthFix" style="height: 16px;">
+            </image>
+          </view>
+        </view>
+        <view class="type-item clearfix sk-pseudo sk-pseudo-circle" data-ids="aa133ce55f47200c0055561339446df0-60173c665f48a4cc00799d9a7914fc34" data-title="餐饮" style="border: none;">
+          <view class="fl img-icon">
+            <image class="auto-img icon-box sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl type-content">
+            <view class="type-text">
+              <view class="fl t-title sk-transparent sk-text-15-0000-989 sk-text">
+                餐饮
+              </view>
+              <view class="fr t-price t-price-shouru sk-transparent sk-text-15-0000-907 sk-text">
+                ￥1,463.00
+              </view>
+            </view>
+            <view class="type-progress">
+              <view class="fl progress">
+                <view class="progress-active" style="background-color: rgb(249,10,110);width: 25.675675675675674%;">
+                </view>
+              </view>
+              <view class="fl count sk-transparent sk-text-20-0000-680 sk-text" style="background-position-x: 100%;">
+                2笔
+              </view>
+            </view>
+          </view>
+          <view class="fl arrow">
+            <image class="auto-img arrow-img sk-image" mode="widthFix" style="height: 16px;">
+            </image>
+          </view>
+        </view>
+        <view class="type-item clearfix sk-pseudo sk-pseudo-circle" data-ids="8a6c3bf65f4728e2005aa9b516a21679-8a6c3bf65f4cb7220092505c1bb8f50c" data-title="购物" style="border: none;">
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,6 @@
+<view class="wx-cell">
+  <view class="wx-cell-title">{{cellTitle}}</view>
+  <view class="wx-cell-arrow">
+    <image class="wx-cell-arrow-icon" src="../../images/right-arrow.png" mode="widthFix"></image>
+  </view>
+</view>

@@ -1,0 +1,109 @@
+.menu {
+  .menu-box{
+    overflow-x: auto;
+    position: fixed;
+    width: 100%;
+    top: 54px;
+    background-color: #fbfbfb;
+    z-index: 10;
+  }
+
+  .menu-list-item{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    font-weight: 700;
+  }
+  .menu-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-box{
+    width: 50px;
+    margin: 0 auto;
+  }
+  .text{
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+    &.active{
+      color: #0C34BA;
+    }
+  }
+
+  .menu-product{
+    margin-top:134px;
+    padding-top: 0;
+  }
+
+  .product-list{
+    background-color: #f5f5f5;
+    padding: 10px;
+    &.not-first{
+      padding-top: 0;
+    }
+  }
+  .pro-box{
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .pro-img{
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .pro-info{
+    margin-left: 20px;
+    width: calc(~"100% - 90px");
+  }
+  .pro-text{
+    text-align: left;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+  .ch-name{
+    font-weight: bold;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .en-name{
+    height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    line-height: 20px;
+  }
+  .pro-price{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 70px;
+    padding-right: 10px;
+    color: #0C34BA;
+  }
+
+  /deep/ .van-search{
+    padding: 0;
+  }
+  /deep/ .van-search__content{
+    background-color: #f5f5f5;
+  }
+
+  /deep/ .van-cell .van-icon{
+    color: #0C34BA;
+  }
+
+  .menu-search{
+    padding: 10px 0px;
+    background-color:#fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9;
+  }
+}

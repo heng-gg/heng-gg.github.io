@@ -1,0 +1,56 @@
+<import src="booking.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{isLoading}}" />
+<view class="booking" wx:else>
+	<view class="booking-bg"></view>
+	<view class="booking-box">
+
+		<view class="type-box">
+			<view class="type-title">
+				<view class="type-title-item {{item.isActive ? 'active' : ''}}" wx:for="{{typeData}}" wx:key="index" bindtap="toggleTag" data-active="{{item.isActive}}" data-index="{{index}}" data-name="typeData">{{item.title}}</view>
+			</view>
+			<view class="type-icons clearfix">
+
+				<view class="type-icon-item fl" wx:for="{{iconsData}}" wx:key="index">
+					<view class="icon-box {{item.isActive ? 'active' : ''}}" data-active="{{item.isActive}}" data-index="{{index}}" data-name="iconsData" bindtap="toggleTag">
+						<view>
+							<image class="auto-img icon-img" src="{{item.url}}" mode="widthFix"></image>
+						</view>
+						<view class="icon-title">{{item.title}}</view>
+					</view>
+				</view>
+
+			</view>
+		</view>
+
+		<view class="account-box">
+			<view class="account-title">账户选择</view>
+			<view class="account-type">
+				<view class="account-item {{item.isActive ? 'active' : ''}}" wx:for="{{accountData}}" wx:key="index" bindtap="toggleTag" data-active="{{item.isActive}}" data-index="{{index}}" data-name="accountData">{{item.title}}</view>
+			</view>
+		</view>
+
+		<view class="booking-info">
+			<view class="clearfix">
+				<view class="fl b-title">日期</view>
+				<view class="fl b-content">
+					<picker bindchange="inputValue" class="picker-box" mode="date" start="{{dateRange.start}}" end="{{dateRange.end}}" data-name="date">{{date}}</picker>
+				</view>
+			</view>
+			<view class="clearfix">
+				<view class="fl b-title">金额</view>
+				<view class="fl b-content">
+					<input class="money" type="digit" placeholder="输入金额" bindchange="inputMoney" data-name="money" bindchange="inputValue" />
+				</view>
+			</view>
+			<view class="clearfix">
+				<view class="fl b-title">备注</view>
+				<view class="fl b-content">
+					<input class="money" type="text" placeholder="输入备注内容" maxlength="20" data-name="comment" bindchange="inputValue" />
+				</view>
+			</view>
+		</view>
+
+    <view class="save" bindtap="save">保存</view>
+
+	</view>
+</view>

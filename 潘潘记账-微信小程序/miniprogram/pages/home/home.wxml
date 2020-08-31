@@ -1,0 +1,58 @@
+<import src="home.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{isLoading}}" />
+<view class="home" wx:else>
+  <view class="home-box">
+    <view class="jieyu-box">
+      <view class="jy">
+        <view class="jieyu">本月结余</view>
+        <view class="jieyu-money">
+          <view class="int">{{jieyu.intNum}}.<text class="decimal">{{jieyu.decimal}}</text></view>
+        </view>
+      </view>
+    </view>
+    <view class="sz clearfix">
+      <view class="shouru clearfix fl">
+        <view class="fl by">本月收入</view>
+        <view class="fl shouru-money">{{monthMoney.shouru}}</view>
+      </view>
+      <view class="shouru clearfix fr">
+        <view class="fl by">本月支出</view>
+        <view class="fl shouru-money">{{monthMoney.zhichu}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="clearfix box">
+    <view class="fl clearfix text-box">
+      <view class="fl">{{currentDate}}</view>
+      <view class="fl text-shouru">收入：{{dateMoney.shouru}}</view>
+      <view class="fl">支出：{{dateMoney.zhichu}}</view>
+    </view>
+    <view class="fr point-box">
+      <view class="fl point"></view>
+      <view class="fl point"></view>
+      <view class="fl point"></view>
+      <view class="picker-box">
+        <picker bindchange="selectDate" mode="date" start="{{dateRange.start}}" end="{{dateRange.end}}">选择日期</picker>
+      </view>
+    </view>
+   
+  </view>
+    <view class="list">
+      <view class="list-item clearfix" wx:for="{{dateBookingData}}" wx:key="index">
+        <view class="fl img-box">
+          <image class="auto-img img-icon" src="{{item.bookingStyle.url}}" mode="widthFix"></image>
+        </view>
+        <view class="fl list-text">
+          <view class="fl">
+            <view class="clearfix title-info {{item.comment == '' ? 'not-comment' : ''}}">
+              <view class="fl type-title">{{item.bookingStyle.title}}</view>
+              <view class="fl account">{{item.account}}</view>
+            </view>
+            <view class="comment" wx:if="{{item.comment != ''}}">{{item.comment}}</view>
+          </view>
+          <view class="fr price p-{{item.bookingType.type}}">￥{{item.money}}</view>
+        </view>
+      </view>
+
+    </view>
+</view>

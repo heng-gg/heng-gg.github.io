@@ -1,0 +1,12 @@
+.auth{
+  margin-top: 100rpx;
+}
+
+button:not([size='mini']){
+  background-color: #FEDB5B;
+  font-weight: normal;
+  color: #444;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  padding: 0;
+}

@@ -1,0 +1,25 @@
+.wx-cell{
+  height: 100rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+}
+
+.wx-cell-title{
+  line-height: 100rpx;
+  color: #444;
+  font-size: 28rpx;
+  float: left;
+}
+
+.wx-cell-arrow{
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 34rpx;
+  float: right;
+}
+
+.wx-cell-arrow-icon{
+  width: 100%;
+  display: block;
+  height: 32rpx;
+}

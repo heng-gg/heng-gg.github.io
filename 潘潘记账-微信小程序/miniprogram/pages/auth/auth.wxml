@@ -1,0 +1,3 @@
+<view class="auth">
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserAuthInfo" hover-class="none">授权认证</button>
+</view>

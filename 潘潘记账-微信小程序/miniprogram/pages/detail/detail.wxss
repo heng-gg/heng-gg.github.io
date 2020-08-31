@@ -1,0 +1,63 @@
+@import "./detail.skeleton.wxss";
+.list-item{
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.img-box{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #ddd;
+
+}
+
+.list-text{
+  width: calc(100% - 100rpx);
+  height: 80rpx;
+  padding-left: 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  padding-bottom: 20rpx;
+}
+
+.type-title{
+  color: #444;
+  font-size: 28rpx;
+}
+
+.account{
+  color: #999;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+
+.title-info{
+ line-height: 40rpx;
+}
+
+.comment{
+  color: #999;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.price{
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.p-shouru{
+  color: #e4393c;
+}
+
+.p-zhichu{
+  color: #00B26A;
+}
+
+.not-comment{
+  line-height: 80rpx;
+}
+
+.img-icon{
+  height: 80rpx;
+}

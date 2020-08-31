@@ -1,0 +1,17 @@
+<import src="my.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{isLoading}}" />
+<view class="my" wx:else>
+  <view class="my-bg">
+    <view class="img-box" wx:if="{{isAuth}}">
+      <view class="my-img">
+        <image class="auto-img my-img-box" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+      </view>
+      <view class="nickname">{{userInfo.nickName}}</view>
+    </view>
+    <view class="auth-btn" wx:else bindtap="goPage" data-pageurl="../auth/auth">授权认证</view>
+  </view>
+
+  <view class="list">
+    <my-cell bindtap="goPage" data-pageurl="{{item.pageUrl}}" cell-title="{{item.title}}" wx:for="{{listData}}" wx:key="index"></my-cell>
+  </view>
+</view>

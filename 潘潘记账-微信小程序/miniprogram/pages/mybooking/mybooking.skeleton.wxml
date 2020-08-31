@@ -1,0 +1,307 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午5:01:52 
+使用方法：
+在 pages\mybooking\mybooking.wxml 引入模板
+
+```
+<import src="mybooking.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 pages\mybooking\mybooking.wxss 中引入样式
+```
+@import "./mybooking.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view>
+      <view class="list">
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-15-0000-930 sk-text">
+                  娱乐
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-752 sk-text">
+                  支付宝
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-320 sk-text">
+                  2020-08-25
+                </view>
+              </view>
+              <view class="comment sk-transparent sk-text-20-0000-653 sk-text">
+                八佰
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-464 sk-text">
+                ￥58.00
+              </view>
+              <view class="fl remove-box" data-id="7498b5fe5f44c715004d199f7baa0fd3" data-index="0">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-15-0000-120 sk-text">
+                  餐饮
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-844 sk-text">
+                  储蓄卡
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-709 sk-text">
+                  2020-08-27
+                </view>
+              </view>
+              <view class="comment sk-transparent sk-text-20-0000-964 sk-text">
+                吃了辣鸡粉
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-668 sk-text">
+                ￥600.00
+              </view>
+              <view class="fl remove-box" data-id="aa133ce55f47200c0055561339446df0" data-index="1">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-15-0000-233 sk-text">
+                  学习
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-84 sk-text">
+                  储蓄卡
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-13 sk-text">
+                  2020-08-27
+                </view>
+              </view>
+              <view class="comment sk-transparent sk-text-20-0000-71 sk-text">
+                买了卷子
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-zhichu sk-transparent sk-text-30-0000-425 sk-text">
+                ￥400.00
+              </view>
+              <view class="fl remove-box" data-id="6518b7395f47201f006b85780e70a918" data-index="2">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info not-comment sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-32-5000-988 sk-text">
+                  购物
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-542 sk-text">
+                  微信
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-766 sk-text">
+                  2020-08-27
+                </view>
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-4 sk-text">
+                ￥1,200.00
+              </view>
+              <view class="fl remove-box" data-id="8a6c3bf65f4728e2005aa9b516a21679" data-index="3">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-15-0000-239 sk-text">
+                  交通
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-395 sk-text">
+                  微信
+                </view>
+                <view class="fl account sk-transparent sk-text-20-0000-716 sk-text">
+                  2020-08-27
+                </view>
+              </view>
+              <view class="comment sk-transparent sk-text-20-0000-119 sk-text">
+                去深圳东站
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-zhichu sk-transparent sk-text-30-0000-406 sk-text">
+                ￥79.00
+              </view>
+              <view class="fl remove-box" data-id="65825b355f472a9a005cbb161586995b" data-index="4">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info not-comment sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-32-5000-415 sk-text">
+                  人情
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-354 sk-text">
+                  支付宝
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-367 sk-text">
+                  2020-08-26
+                </view>
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-879 sk-text">
+                ￥800.00
+              </view>
+              <view class="fl remove-box" data-id="ac5f38825f472bf9006df7474a2cbbd4" data-index="5">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info not-comment sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-32-5000-376 sk-text">
+                  餐饮
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-448 sk-text">
+                  信用卡
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-643 sk-text">
+                  2020-08-28
+                </view>
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-36 sk-text">
+                ￥863.00
+              </view>
+              <view class="fl remove-box" data-id="60173c665f48a4cc00799d9a7914fc34" data-index="6">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info not-comment sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-32-5000-153 sk-text">
+                  住房
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-212 sk-text">
+                  微信
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-685 sk-text">
+                  2020-08-28
+                </view>
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-shouru sk-transparent sk-text-30-0000-332 sk-text">
+                ￥1,200.00
+              </view>
+              <view class="fl remove-box" data-id="6518b7395f48a4d4008519db43a2cfd1" data-index="7">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="list-item clearfix sk-pseudo sk-pseudo-circle">
+          <view class="fl img-box">
+            <image class="auto-img img-icon sk-image" mode="widthFix" style="height: 40px;">
+            </image>
+          </view>
+          <view class="fl list-text" style="border: none;">
+            <view class="fl">
+              <view class="clearfix title-info not-comment sk-pseudo sk-pseudo-circle">
+                <view class="fl type-title sk-transparent sk-text-32-5000-359 sk-text">
+                  人情
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-498 sk-text">
+                  储蓄卡
+                </view>
+                <view class="fl account sk-transparent sk-text-35-0000-680 sk-text">
+                  2020-08-28
+                </view>
+              </view>
+            </view>
+            <view class="fr clearfix sk-pseudo sk-pseudo-circle">
+              <view class="fl price p-zhichu sk-transparent sk-text-30-0000-243 sk-text">
+                ￥89.00
+              </view>
+              <view class="fl remove-box" data-id="6518b7395f48a4df00851a572c0510c5" data-index="8">
+                <image class="auto-img remove-box-img sk-image" mode="widthFix" style="height: 20px;">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

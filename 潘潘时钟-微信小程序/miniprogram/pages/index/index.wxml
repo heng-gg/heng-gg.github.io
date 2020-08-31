@@ -1,0 +1,41 @@
+  <!-- 计时页面主页 -->
+<view class="index" hidden="{{clickShow}}">
+<!-- 滑动条 -->
+  <view class="slider">
+  <slider bindchange="sliderChange" min="1" max="60" value="5" show-value activeColor="#E7624F"></slider>
+  </view>
+  <!-- 文字提示 -->
+  <view class="index-text">
+    <view class="texe-title">选择一个任务</view>
+    <view class="texe-deco">在接下来的{{time}}分钟内,你将专注做这件事</view>
+  </view>
+  <!-- 选择事件 -->
+  <view class="index-event">
+    <view class="event-data {{index == isActive ? 'active' : ''}}" bindtap="clickEvent" data-index="{{index}}" wx:for="{{cateArr}}" wx:key="index">
+      <view class="data-img" >
+        <image class="img" mode="widthFix" src="../../images/{{item.icon}}"></image>
+      </view>
+      <view class="data-title">{{item.text}}</view>
+    </view>
+  </view>
+  <!-- 开始按钮 -->
+  <view class="index-btn" bindtap="clickbtn">开始专注</view>
+</view>
+    <!-- 计时页面分页 -->
+<view class="indexFu" hidden="{{!clickShow}}" style="height:{{indexFuHeight}}rpx">
+  <!-- 倒计时时间 -->
+  <view class="progress">
+    <canvas canvas-id="progress_bg" class="progress_bg"></canvas>
+    <canvas canvas-id="progress_active" class="progress_active"></canvas>
+    <view class="progress_time">{{daotime}}</view>
+  </view>
+  <!-- 按钮 -->
+  <view class="indexFu-btn">
+    <view class="btn-return" wx:if="{{returnShow}}" bindtap="return">返回</view>
+    <view class="btn-pause" wx:if="{{pauseShow}}" bindtap="pause">暂停</view>
+    <view class="continueBtn" wx:if="{{continueShow}}">
+      <view class="btn-contine" bindtap="continue">继续</view>
+      <view class="btn-giveUp" bindtap="giveUp">放弃</view>
+    </view>
+  </view>
+</view>

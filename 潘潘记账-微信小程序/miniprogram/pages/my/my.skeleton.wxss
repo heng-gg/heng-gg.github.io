@@ -1,0 +1,42 @@
+/*
+此文件为开发者工具生成，生成时间: 2020/8/31 下午7:05:49 
+
+在 pages\my\my.wxss 中引入样式
+```
+@import "./my.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+*/
+.sk-transparent {
+    color: transparent !important;
+  }
+.sk-text-32-5000-685 {
+    background-image: linear-gradient(transparent 32.5000%, #EEEEEE 0%, #EEEEEE 67.5000%, transparent 0%) !important;
+    background-size: 100% 80.0000rpx;
+    position: relative !important;
+  }
+.sk-text {
+    background-origin: content-box !important;
+    background-clip: content-box !important;
+    background-color: transparent !important;
+    color: transparent !important;
+    background-repeat: repeat-y !important;
+  }
+.sk-text-36-0000-59 {
+    background-image: linear-gradient(transparent 36.0000%, #EEEEEE 0%, #EEEEEE 64.0000%, transparent 0%) !important;
+    background-size: 100% 100.0000rpx;
+    position: relative !important;
+  }
+.sk-image {
+    background: #EFEFEF !important;
+  }
+.sk-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+  }

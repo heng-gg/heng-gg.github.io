@@ -1,0 +1,144 @@
+@import "./booking.skeleton.wxss";
+.booking-bg{
+  height: 200rpx;
+  background-color: #FEDB5B;
+}
+
+.booking-box{
+  padding: 20rpx;
+  margin-top: -100rpx;
+}
+
+.type-box{
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding-top: 40rpx;
+}
+
+.type-title{
+  width: 240rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  border-radius: 30rpx;
+  border: 1rpx solid #EAB93F;
+  display: flex;
+  overflow: hidden;
+}
+
+.type-title-item{
+  width: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #444;
+}
+
+.type-title-item.active{
+  background-color: #FEDB5B;
+}
+
+.type-icon-item{
+  width: 20%;
+  margin-bottom: 40rpx;
+}
+
+.icon-box{
+  width: 80rpx;
+  margin: 0 auto;
+  transition: transform .2s linear;
+}
+
+.icon-box.active{
+  transform: scale(1.2);
+  color: #EAB93F;
+  font-weight: bold;
+}
+
+.icon-img{
+  height: 80rpx;
+}
+
+.icon-title{
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #444;
+}
+
+.type-icons{
+  margin-top: 40rpx;
+}
+
+.account-box{
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.account-title{
+  font-size: 28rpx;
+  color: #444;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.account-type{
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.account-item{
+  width: calc(20% - 20rpx);
+  height: 50rpx;
+  margin: 0 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #999;
+  background-color: #e8e8e8;
+  border-radius: 25rpx;
+}
+
+.account-item.active{
+  background-color: #FEDB5B;
+  color: #444;
+}
+
+.booking-info{
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+
+.b-title{
+  width: 120rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #444;
+  font-size: 28rpx;
+}
+
+.b-content{
+  width: calc(100% - 120rpx);
+  height: 80rpx;
+}
+
+.picker-box,.money{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  color: #808080;
+  font-size: 28rpx;
+}
+.save{
+  height: 80rpx;
+  background-color: #FEDB5B;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
